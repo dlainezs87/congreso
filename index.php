@@ -28,6 +28,13 @@ if(!isset($_GET['pag'])){
                   require_once"views/inner-pages/register-inner.php";
               }
             break;
+            case 'program-inner':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/program-inner.php'; 
+              }else {
+                  require_once"views/inner-pages/program-inner.php";
+              }
+            break;
         default:
             break;
     }

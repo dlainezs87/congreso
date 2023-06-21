@@ -1,17 +1,10 @@
-<section class="about" style="background: linear-gradient(to right, white 0%, white 50%, #F7F7F7 50%, #F7F7F7 100%);">
-	<div class="container">
-		<div class="row content">
-			<div class="col-lg-8">
-				<div class="section-title">
-		          <h2>Programa</h2>
-		          <p>Explora los temas destacados del Congreso Regional</p>
-		          <p style="color:#F8C300;">¡Únete ahora y amplía tus conocimientos!</p><br>
-		          <a href="#" class="btn-learn-more"><i class="bi-person-fill-add"></i>&nbsp;Inscripciones</a>
-		        </div>
-			</div>
-		</div>
-	</div>
-
+<div style="width:100%;height:406px;background-size:cover;background-position:center;background-repeat:no-repeat; background:url('assets/img/inner-bg.jpg');">
+      <div style="padding-top:200px;">
+        <h1 style="text-align:center;color:white;font-weight:bolder;">Programa</h1>
+         <p style="text-align:center;"><a style="color:white;" href="<?=base_url?>">Inicio</a> - <span style="text-align:center;color:#F8C300;">Programa</span></p>
+      </div>
+</div>
+<section class="about">
 	<div class="container">
 		<div class="row content">
 			<div style="margin-top:30px;" class="col-lg-12">
@@ -40,6 +33,7 @@
 					</div>
 				</div>
 			</div>
+			
 			<div style="margin-top:30px;" class="col-lg-12">
 				<div class="row program-container">
 					<div style="background:#2C5976;padding:30px;" class="col-lg-4">

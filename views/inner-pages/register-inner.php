@@ -3,7 +3,7 @@
     <div style="width:100%;height:406px;background-size:cover;background-position:center;background-repeat:no-repeat; background:url('assets/img/inner-bg.jpg');">
       <div style="padding-top:200px;">
         <h1 style="text-align:center;color:white;font-weight:bolder;">Registro</h1>
-         <p style="text-align:center;"><a style="color:white;" href="">Inicio</a> - <span style="text-align:center;color:#F8C300;">Registro</span></p>
+         <p style="text-align:center;"><a style="color:white;" href="<?=base_url?>">Inicio</a> - <span style="text-align:center;color:#F8C300;">Registro</span></p>
       </div>
     </div>
 

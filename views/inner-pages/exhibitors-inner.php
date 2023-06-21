@@ -4,7 +4,7 @@
       
       <div style="padding-top:200px;">
         <h1 style="text-align:center;color:white;font-weight:bolder;">Expositores</h1>
-         <p style="text-align:center;"><a style="color:white;" href="">Inicio</a> - <span style="text-align:center;color:#F8C300;">Expositores</span></p>
+         <p style="text-align:center;"><a style="color:white;" href="<?=base_url?>">Inicio</a> - <span style="text-align:center;color:#F8C300;">Expositores</span></p>
       </div>
 
     </div>
