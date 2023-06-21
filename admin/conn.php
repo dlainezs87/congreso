@@ -1,5 +1,5 @@
 <?php 
-$mysqli = '';
+
 $server = "localhost";
 $user = "root";
 $pass = "";
@@ -12,5 +12,4 @@ if ($mysqli -> connect_errno) {
     exit();
   }
 //$mysqli->close();
-
 ?>
