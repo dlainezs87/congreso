@@ -9,16 +9,24 @@ if(!isset($_GET['pag'])){
   require_once"views/home-modules/count.php"; 
   require_once"views/home-modules/about.php";
   require_once"views/home-modules/program.php"; 
-  require_once"views/home-modules/exhibitors.php";  
+  require_once"views/home-modules/exhibitors.php";
+  require_once"views/home-modules/sponsors.php";  
       
 } else {
     switch ($_GET['pag']) {
-        case"quotes":
-            $dataQuote = $_POST;
-            if(isset($_POST['id'])&&isset($_POST['amount'])&&isset($_POST['product'])){
-                require_once 'views/quotes/quoteForm.php'; 
-            }
-            
+        case 'exhibitors-inner':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/exhibitors-inner.php'; 
+              }else {
+                  require_once"views/inner-pages/exhibitors-inner.php";
+              }
+            break;
+            case 'register-inner':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/register-inner.php'; 
+              }else {
+                  require_once"views/inner-pages/register-inner.php";
+              }
             break;
         default:
             break;
