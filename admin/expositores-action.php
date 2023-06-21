@@ -67,7 +67,11 @@ if($_POST['action']=="edit"){
     $id        = (int)addslashes($_POST['id']);
 
     //insert
+
     $sql = "update expositores set 
+=======
+    $sql = "update blogs set 
+
                 nombre = '".$nombre."',
                 pais = '".$pais."',
                 edad = '".$edad."',

@@ -23,9 +23,13 @@
                 <input type="text" required class="form-control" id="locacion" name="locacion" placeholder="">
             </div>
             <div class="form-group">
+
                 <label for="idAgenda">Agenda:</label>
                 <select name="idAgenda" class="form-select form-control" id="idAgenda">
                     <option value="-1">Seleccione una opci&oacute;n</option>
+
+                <select name="idAgenda" class="form-select form-control" id="idGaleria">
+
                 <?php
                     include("conn.php");
                     $sql = "select * from agenda order by id DESC";

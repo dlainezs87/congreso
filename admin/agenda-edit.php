@@ -18,6 +18,7 @@
                     <label for="titulo">Titulo:</label>
                     <input type="text" required class="form-control" value="<?php echo $row['titulo'] ?>" id="titulo" name="titulo" placeholder="">
                 </div>
+
                 <div class="row">
                     <div class="col-6 form-group">
                         <label for="fecha-hora">Fecha y Hora Inicio:</label>
@@ -37,6 +38,15 @@
                             </div>
                         </div>
                     </div>
+
+                <div class="form-group">
+                    <label for="fechaInicio">Fecha Inicio:</label>
+                    <input type="date" required class="form-control" value="<?php echo $row['fechaInicio'] ?>" id="fechaInicio" name="fechaInicio">
+                </div>
+                <div class="form-group">
+                    <label for="fechaFinal">Fecha Final:</label>
+                    <input type="date" required class="form-control" value="<?php echo $row['fechaFinal'] ?>" id="fechaFinal" name="fechaFinal">
+
                 </div>
                 <div class="form-group">
                     <label for="titulo">Lugar:</label>
@@ -57,6 +67,7 @@
 <script>
     CKEDITOR.replace('contenido');
 
+
     $(document).ready(function() {
         $('#fecha-hora-inicio').datetimepicker({
             format: 'YYYY-MM-DD hh:mm:ss' // Cambia el formato de hora a 'HH:mm'
@@ -65,6 +76,8 @@
             format: 'YYYY-MM-DD hh:mm:ss' // Cambia el formato de hora a 'HH:mm'
         });
     });
+
+
 </script>
 
 <?php
@@ -73,6 +86,7 @@
 ?><script>
         window.open('agenda.php', '_self');
     </script><?php
+
     }
 include("footer.php"); ?>
 
@@ -86,3 +100,9 @@ include("footer.php"); ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
+
+            }
+
+
+            include("footer.php"); ?>
+

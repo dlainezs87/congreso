@@ -26,7 +26,11 @@ No se agregó el regitro, vuelva a intentarlo.
 <?php } ?>
 
 <p class="mb-4">Agregue, edite o elimine.</p>
+
 <a class="btn btn-primary mb-4" href="agenda-add.php">Agregar nuevo</a>
+
+<a class="btn btn-primary mb-4" href="blogs-add.php">Agregar nuevo</a>
+
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -46,7 +50,11 @@ No se agregó el regitro, vuelva a intentarlo.
                 <tbody>
                     <?php
                     include("conn.php");
+
                     $sql = "select * from agenda order by fechaInicio ASC";
+
+                    $sql = "select * from agenda order by fecha ASC";
+
                     $query = $mysqli->query($sql);
                     while($row = $query->fetch_assoc()){
                     ?>

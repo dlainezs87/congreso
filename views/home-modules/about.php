@@ -1,6 +1,6 @@
  <!-- ======= About Section ======= data-aos="fade-up" -->
-    <section class="about">
-      <div class="container" >
+    <section id="about" class="about">
+      <div class="container">
 
         <div class="section-title">
           <h2>Introducción</h2>

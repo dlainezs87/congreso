@@ -1,14 +1,22 @@
-<!-- ======= expositores Section ======= -->
+<main id="main">
+
+    <div style="width:100%;height:406px;background-size:cover;background-position:center;background-repeat:no-repeat; background:url('assets/img/inner-bg.jpg');">
+      
+      <div style="padding-top:200px;">
+        <h1 style="text-align:center;color:white;font-weight:bolder;">Expositores</h1>
+         <p style="text-align:center;"><a style="color:white;" href="<?=base_url?>">Inicio</a> - <span style="text-align:center;color:#F8C300;">Expositores</span></p>
+      </div>
+
+    </div>
+
+    <!-- ======= expositores Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
-
         <div class="section-title">
           <h2>Expositores</h2>
           <p>¡Descubre la experiencia y conocimiento de nuestros <span style="color:#F8C300;">destacados expositores!</span></p>
         </div>
-
         <div class="row">
-
           <div class="col-xl-3 col-lg-4 col-md-6">
             <div class="member" >
               <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
@@ -85,3 +93,5 @@
 
       </div>
     </section><!-- End Team Section -->
+
+</main><!-- End #main -->

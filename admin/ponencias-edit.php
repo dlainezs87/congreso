@@ -27,7 +27,15 @@
                     <textarea class="form-control" name="contenido" id="contenido" cols="30" rows="10"><?php echo $row['contenido']?></textarea>
                 </div>
                 <div class="form-group">
+
                 <select name="idAgenda" class="form-select form-control" id="idAgenda">
+
+                    <label for="locacion">Locaci&oacute;n:</label>
+                    <input type="text" required class="form-control" id="locacion" name="locacion" value="<?php echo $row['locacion']?>" placeholder="">
+                </div>
+                <div class="form-group">
+                <select name="idAgenda" class="form-select form-control" id="idGaleria">
+
                 <?php
                     include("conn.php");
                     $sql = "select * from agenda order by id DESC";

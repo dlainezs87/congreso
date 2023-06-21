@@ -46,8 +46,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-          <li><a class="nav-link scrollto" href="#about">Programa</a></li>
+          <li><a class="nav-link scrollto active" href="<?=base_url?>">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=program-inner">Programa</a></li>
+          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=exhibitors-inner">Expositores</a></li>
           <li><a class="nav-link scrollto" href="#services">Ponencias</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Patrocinadores</a></li>
           <li><a class="nav-link scrollto" href="#team">Contacto</a></li>
@@ -68,7 +69,7 @@
               <li><a href="#">Drop Down 4</a></li>
             </ul>
           </li>-->
-          <li><a class="getstarted scrollto" href="#about"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a></li>
+          <li><a class="getstarted scrollto" href="<?=base_url?>?pag=register-inner"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

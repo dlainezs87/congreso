@@ -1,10 +1,3 @@
-/**
-* Template Name: Multi
-* Updated: May 30 2023 with Bootstrap v5.3.0
-* Template URL: https://bootstrapmade.com/multi-responsive-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # General
@@ -1422,7 +1415,7 @@ section {
 }
 
 .pricing ul i {
-  color: #ed502e;
+  color: #F8C300;
   font-size: 18px;
   padding-right: 4px;
 }
@@ -1460,7 +1453,7 @@ section {
 .pricing .featured {
   z-index: 10;
   padding: 100px 40px;
-  border: 4px solid #ed502e;
+  border: 4px solid #F8C300;
 }
 
 .pricing .featured .get-started-btn {
@@ -1626,7 +1619,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #ed502e;
+  background: #F8C300;
   border: 0;
   padding: 10px 30px;
   border-radius: 4px;
@@ -1635,7 +1628,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: #ef6445;
+  background: #f2ca37;
 }
 
 @keyframes animate-loading {
@@ -1895,4 +1888,9 @@ section {
     padding-top:0px;
   }
 
+}
+
+.form-control {
+    font-size:14px !important;
+    color: #212529;
 }

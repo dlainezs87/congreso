@@ -4,6 +4,7 @@ if($_POST['action']=="add"){
     //get values
     $titulo = addslashes($_POST['titulo']);
     $contenido = addslashes($_POST['contenido']);
+
     $lugar = addslashes($_POST['lugar']);
 
     $fechaI = addslashes($_POST['fecha-hora-inicio']);
@@ -14,6 +15,10 @@ if($_POST['action']=="add"){
 
     $fechaInicio = date_format($fechaIni, 'Y-m-d H:i:s');
     $fechaFinal  = date_format($fechaFin, 'Y-m-d H:i:s');
+
+
+    $fechaInicio = addslashes($_POST['fechaInicio']);
+    $fechaFinal = addslashes($_POST['fechaFinal']);
 
     $lugar = addslashes($_POST['lugar']);
     //insert
@@ -41,6 +46,7 @@ if($_POST['action']=="add"){
 
 if($_POST['action']=="edit"){
     //get values
+
 
     $titulo = addslashes($_POST['titulo']);
     $contenido = addslashes($_POST['contenido']);
@@ -71,11 +77,26 @@ if($_POST['action']=="edit"){
 
     //insert
     $sql = "update agenda set 
+
+    $titulo = addslashes($_POST['titulo']);
+    $contenido = addslashes($_POST['contenido']);
+    $fechaInicio = addslashes($_POST['fechaInicio']);
+    $fechaFinal = addslashes($_POST['fechaFinal']);
+    $lugar = addslashes($_POST['lugar']);
+    $id = (int)addslashes($_POST['id']);
+
+    //insert
+    $sql = "update blogs set 
+
                 titulo = '".$titulo."',
                 contenido = '".$contenido."',
                 fechaInicio = '".$fechaInicio."',
                 fechaFinal = '".$fechaFinal."',
+
                 lugar = '".$lugar."'
+
+                fechaFinal = '".$lugar."'
+
                 where id = " . $id;
 
 
