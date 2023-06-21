@@ -26,7 +26,11 @@
     <?php } ?>
 
     <p class="mb-4">Agregue, edite o elimine.</p>
+
+    <a class="btn btn-primary mb-4" href="expositores-add.php">Agregar nuevo</a>
+
     <a class="btn btn-primary mb-4" href="blogs-add.php">Agregar nuevo</a>
+
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -40,12 +44,20 @@
                             <th class="col-2">Pais</th>
                             <th class="col-2">Edad</th>   
                             <th class="col-2 text-center">Profesion</th>   
+
+                            <th class="col-2 text-center">Acciones</th>   
+
+
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         include("conn.php");
+
+                        $sql = "select * from expositores order by nombre ASC";
+
                         $sql = "select * from blogs order by fecha DESC";
+
                         $query = $mysqli->query($sql);
                         while($row = $query->fetch_assoc()){
                         ?>
@@ -56,7 +68,11 @@
                             <td><?php echo $row['profesion']?></td>
                         <td class="text-center">
                             <a href="expositores-edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
+
+                            <a href="expositores-action.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
+
                             <a href="expositores-actions.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
+
                         </td>
                             
                         </tr>

@@ -20,6 +20,23 @@
                     <span>Agenda</span></a>
             </li>
             <li class="nav-item active">
+
+                <a class="nav-link" href="expositores.php">
+                    <i class="fas fa-user"></i>
+                    <span>Expositores</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="ponencias.php">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>Ponencias</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="expositorponencia.php">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                    <span>Expositor por Ponencia</span></a>
+            </li>
+            <li class="nav-item active">
+
                 <a class="nav-link" href="sliders.php">
                     <i class="fas fa-image"></i>
                     <span>Slider</span></a>

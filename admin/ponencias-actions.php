@@ -7,10 +7,27 @@ if($_POST['action']=="add"){
     $contenido   = addslashes($_POST['contenido']);
     $idAgenda    = addslashes($_POST['idAgenda']);
 
+
+    $col = '';
+    $val = '';
+    if($idAgenda > 0){
+        $col = ',idAgenda';
+        $val = ', '.$idAgenda;
+    }
+
+
     //insert
     $sql = "insert into ponencias(
                 titulo,
                 descripcion,
+
+                contenido
+                ".$col."
+            )values(
+                '".$titulo."',
+                '".$descripcion."',
+                '".$contenido. "'" . $val . ")";
+
                 contenido,
                 idAgenda
             )values(
@@ -19,6 +36,7 @@ if($_POST['action']=="add"){
                 '".$contenido."',
                 '".$idAgenda."'
             )";
+
 
     if($mysqli->query($sql)){ 
         $idgen = $mysqli->insert_id;

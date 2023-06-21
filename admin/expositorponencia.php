@@ -1,7 +1,7 @@
 <?php include("open.php");?>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Agenda</h1>
+<h1 class="h3 mb-2 text-gray-800">Expositor por Ponencia</h1>
 
 <?php 
 if(isset($_GET['ok'])){ 
@@ -26,11 +26,7 @@ No se agregó el regitro, vuelva a intentarlo.
 <?php } ?>
 
 <p class="mb-4">Agregue, edite o elimine.</p>
-
-<a class="btn btn-primary mb-4" href="agenda-add.php">Agregar nuevo</a>
-
-<a class="btn btn-primary mb-4" href="blogs-add.php">Agregar nuevo</a>
-
+<a class="btn btn-primary mb-4" href="expositorponencia-add.php">Agregar nuevo</a>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -40,32 +36,27 @@ No se agregó el regitro, vuelva a intentarlo.
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="10">
                 <thead>
                     <tr>
-                        <th class="col-8">Titulo</th>
-                        <th class="col-2">Fecha de:</th>
-                        <th class="col-2">Fecha a:</th>
-                        <th class="col-2">Lugar</th>
+                        <th class="col-8">Expositor</th>
+                        <th class="col-2">Ponencia</th>
                         <th class="col-2 text-center">Acciones</th>   
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     include("conn.php");
-
-                    $sql = "select * from agenda order by fechaInicio ASC";
-
-                    $sql = "select * from agenda order by fecha ASC";
-
+                    $sql = "SELECT ep.id, e.nombre, p.titulo 
+                    FROM dbcongreso.expositorvsponencia ep
+                    LEFT JOIN dbcongreso.expositores e ON (ep.idExpositor = e.id)
+                    LEFT JOIN dbcongreso.ponencias p ON (ep.idPonencia = p.id);";
                     $query = $mysqli->query($sql);
                     while($row = $query->fetch_assoc()){
                     ?>
                     <tr>
+                        <td><?php echo $row['nombre']?></td>
                         <td><?php echo $row['titulo']?></td>
-                        <td><?php echo $row['fechaInicio']?></td>
-                        <td><?php echo $row['fechaFinal']?></td>
-                        <td><?php echo $row['lugar']?></td>
                     <td class="text-center">
-                        <a href="agenda-edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="agenda-actions.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
+                        <a href="expositorponencia-edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="expositorponencia-actions.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
                     </td>
                         
                     </tr>

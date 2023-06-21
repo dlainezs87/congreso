@@ -1,7 +1,11 @@
 <?php include("open.php");?>
 
 <!-- Page Heading -->
+
+<h1 class="h3 mb-2 text-gray-800">Expositor</h1>
+
 <h1 class="h3 mb-2 text-gray-800">Blogs</h1>
+
 <p class="mb-4">Editar registro existente</p>
 
 
@@ -12,13 +16,21 @@
 include("conn.php");
 $id = (int)$_GET['id'];
 if($id>0){
+
+    $sql = "select * from expositores where id = " . $id;
+
     $sql = "select * from blogs where id = " . $id;
+
     $query = $mysqli->query($sql);
     $row = mysqli_fetch_assoc($query);
 ?>
 
 <div class="card-body">
+
+    <form id="edit" method="post" action="expositores-action.php"  enctype="multipart/form-data">
+
     <form id="edit" method="post" action="expositores-actions.php"  enctype="multipart/form-data">
+
         <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" required class="form-control" value="<?php echo $row['nombre']?>" id="nombre" name="nombre" placeholder="">
@@ -33,7 +45,11 @@ if($id>0){
         </div>
         <div class="form-group">
             <label for="profesion">Profesion:</label>
+
+            <input type="text" required class="form-control" value="<?php echo $row['profesion']?>" id="profesion" name="profesion" placeholder="">
+
             <input type="text" required class="form-control" value="<?php echo $row['titulo']?>" id="profesion" name="profesion" placeholder="">
+
         </div>
         <?php
         if($row['foto']!=""){?>

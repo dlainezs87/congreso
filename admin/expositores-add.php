@@ -1,11 +1,19 @@
 <?php include("open.php");?>
 <!-- Page Heading -->
+
+<h1 class="h3 mb-2 text-gray-800">Expositor</h1>
+
 <h1 class="h3 mb-2 text-gray-800">Blogs</h1>
+
 <p class="mb-4">Agregar nuevo</p>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-body">
+
+        <form id="add" method="post" action="expositores-action.php" enctype="multipart/form-data">
+
         <form id="add" method="post" action="blogs-actions.php" enctype="multipart/form-data">
+
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" required class="form-control" id="nombre" name="nombre" placeholder="">
@@ -27,7 +35,11 @@
                 <input class="form-control" name="imagen" id="imagen" type="file"/>
             </div>
             <button type="submit" class="btn btn-primary">Agregar</button>
+
+            <a  href="expositores.php" type="submit" class="btn btn-secondary">Regresar</a>
+
             <a  href="blogs.php" type="submit" class="btn btn-secondary">Regresar</a>
+
             <input type="hidden" name="action" id="action" value="add">
         </form>
     </div>
