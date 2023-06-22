@@ -1,4 +1,4 @@
 <?php
-define("base_url", "https://localhost/congreso/");
+define("base_url", "http://localhost/congreso/");
 
 

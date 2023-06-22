@@ -1,4 +1,7 @@
-<?php include("open.php");?>
+<?php 
+include("open.php");
+include("../config/parameters.php");
+?>
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Ponencias</h1>
     <p class="mb-4">Editar registro existente</p>
@@ -27,41 +30,32 @@
                     <textarea class="form-control" name="contenido" id="contenido" cols="30" rows="10"><?php echo $row['contenido']?></textarea>
                 </div>
                 <div class="form-group">
-
-                <select name="idAgenda" class="form-select form-control" id="idAgenda">
-
-                    <label for="locacion">Locaci&oacute;n:</label>
-                    <input type="text" required class="form-control" id="locacion" name="locacion" value="<?php echo $row['locacion']?>" placeholder="">
+                    <select name="idAgenda" class="form-select form-control" id="idGaleria">
+                        <?php
+                            include("conn.php");
+                            $sql = "select * from agenda order by id DESC";
+                            $query = $mysqli->query($sql);
+                            while($rowAgenda = $query->fetch_assoc()){
+                        ?>
+                        <option value="<?=$rowAgenda['id']?>" <?php echo ($row['idAgenda'] == $rowAgenda['id']) ? 'selected':''; ?>><?= $rowAgenda['titulo']?></option>
+                        <?php 
+                        ?>
+                        <?php
+                            }
+                        ?>
+                    </select>
                 </div>
-                <div class="form-group">
-                <select name="idAgenda" class="form-select form-control" id="idGaleria">
-
-                <?php
-                    include("conn.php");
-                    $sql = "select * from agenda order by id DESC";
-                    $query = $mysqli->query($sql);
-                    while($rowAgenda = $query->fetch_assoc()){
-                ?>
-                    <option value="<?=$rowAgenda['id']?>" <?php echo ($row['idAgenda'] == $rowAgenda['id']) ? 'selected':''; ?>><?= $rowAgenda['titulo']?></option>
-                <?php 
-                ?>
-                <?php
-                    }
-                    $mysqli->close();
-                ?>
-                </select>
-            </div>
-                <?php
-                if($row['imagen']!=""){?>
-                <div class="form-group">
-                    <label for="imagen2">Actual:</label>
-                    <img src="../assets/ponencias/<?php echo $row['imagen']?>" width="100px" alt="Img blog" id="imagen2">
-                </div>
-                <?php } ?>
                 <div class="form-group">
                     <label for="imagen">Imagen: * Recomendado 600 x 600px</label>
                     <input class="form-control" name="imagen" id="imagen" type="file"/>
                 </div>
+                <?php
+                if($row['imagen']!=""){?>
+                <div class="form-group">
+                    <label for="imagen2">Actual:</label>
+                    <img src="<?= base_url ?>assets/img/ponencias/<?php echo $row['imagen']?>" width="100px" alt="Img blog" id="imagen2">
+                </div>
+                <?php } ?>
                 <button type="submit" class="btn btn-primary">Editar</button>
                 <a href="ponencias.php" class="btn btn-secondary">Regresar</a>
                 <input type="hidden" name="action" id="action" value="edit">

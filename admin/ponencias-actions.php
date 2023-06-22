@@ -7,36 +7,22 @@ if($_POST['action']=="add"){
     $contenido   = addslashes($_POST['contenido']);
     $idAgenda    = addslashes($_POST['idAgenda']);
 
-
     $col = '';
     $val = '';
     if($idAgenda > 0){
         $col = ',idAgenda';
         $val = ', '.$idAgenda;
     }
-
-
     //insert
     $sql = "insert into ponencias(
                 titulo,
                 descripcion,
-
                 contenido
                 ".$col."
             )values(
                 '".$titulo."',
                 '".$descripcion."',
                 '".$contenido. "'" . $val . ")";
-
-                contenido,
-                idAgenda
-            )values(
-                '".$titulo."',
-                '".$descripcion."',
-                '".$contenido."',
-                '".$idAgenda."'
-            )";
-
 
     if($mysqli->query($sql)){ 
         $idgen = $mysqli->insert_id;
@@ -49,8 +35,8 @@ if($_POST['action']=="add"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo;
-                if (move_uploaded_file($temp, '../assets/ponencias/'.$nombrefinal)) {
-                    chmod('../assets/ponencias/'.$nombrefinal, 0777);
+                if (move_uploaded_file($temp, '../assets/img/ponencias/'.$nombrefinal)) {
+                    chmod('../assets/img/ponencias/'.$nombrefinal, 0777);
                     $sqlima = "update ponencias set imagen = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {
@@ -90,8 +76,8 @@ if($_POST['action']=="edit"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo;
-                if (move_uploaded_file($temp, '../assets/ponencias/'.$nombrefinal)) {
-                    chmod('../assets/ponencias/'.$nombrefinal, 0777);
+                if (move_uploaded_file($temp, '../assets/img/ponencias/'.$nombrefinal)) {
+                    chmod('../assets/img/ponencias/'.$nombrefinal, 0777);
                     $sqlima = "update ponencias set imagen = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {

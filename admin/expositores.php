@@ -7,30 +7,27 @@
     if(isset($_GET['ok'])){ 
     ?>
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-    Se realizó la acción con éxito
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-    </div>
+        Se realizó la acción con éxito
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
     <?php } ?>
 
     <?php 
     if(isset($_GET['err'])){ 
     ?>
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
-    No se agregó el regitro, vuelva a intentarlo.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+        No se agregó el regitro, vuelva a intentarlo.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <?php } ?>
 
     <p class="mb-4">Agregue, edite o elimine.</p>
 
     <a class="btn btn-primary mb-4" href="expositores-add.php">Agregar nuevo</a>
-
-    <a class="btn btn-primary mb-4" href="blogs-add.php">Agregar nuevo</a>
-
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
@@ -42,48 +39,33 @@
                         <tr>
                             <th class="col-8">Nombre</th>
                             <th class="col-2">Pais</th>
-                            <th class="col-2">Edad</th>   
                             <th class="col-2 text-center">Profesion</th>   
-
                             <th class="col-2 text-center">Acciones</th>   
-
-
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         include("conn.php");
-
                         $sql = "select * from expositores order by nombre ASC";
-
-                        $sql = "select * from blogs order by fecha DESC";
-
                         $query = $mysqli->query($sql);
+
                         while($row = $query->fetch_assoc()){
                         ?>
                         <tr>
                             <td><?php echo $row['nombre']?></td>
                             <td><?php echo $row['pais']?></td>
-                            <td><?php echo $row['edad']?></td>
                             <td><?php echo $row['profesion']?></td>
-                        <td class="text-center">
-                            <a href="expositores-edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
-
-                            <a href="expositores-action.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
-
-                            <a href="expositores-actions.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
-
-                        </td>
-                            
+                            <td class="text-center">
+                                <a href="expositores-edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
+                                <a href="expositores-action.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
+                            </td>
                         </tr>
                         <?php 
                         }//while
                         $mysqli->close();?>
-                        
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 <?php include("footer.php");?>

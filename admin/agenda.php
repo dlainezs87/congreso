@@ -29,9 +29,6 @@ No se agregó el regitro, vuelva a intentarlo.
 
 <a class="btn btn-primary mb-4" href="agenda-add.php">Agregar nuevo</a>
 
-<a class="btn btn-primary mb-4" href="blogs-add.php">Agregar nuevo</a>
-
-
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 
@@ -41,9 +38,9 @@ No se agregó el regitro, vuelva a intentarlo.
                 <thead>
                     <tr>
                         <th class="col-8">Titulo</th>
-                        <th class="col-2">Fecha de:</th>
-                        <th class="col-2">Fecha a:</th>
+                        <th class="col-2">Fecha:</th>
                         <th class="col-2">Lugar</th>
+                        <th class="col-2">Destacado</th>
                         <th class="col-2 text-center">Acciones</th>   
                     </tr>
                 </thead>
@@ -53,16 +50,14 @@ No se agregó el regitro, vuelva a intentarlo.
 
                     $sql = "select * from agenda order by fechaInicio ASC";
 
-                    $sql = "select * from agenda order by fecha ASC";
-
                     $query = $mysqli->query($sql);
                     while($row = $query->fetch_assoc()){
                     ?>
                     <tr>
                         <td><?php echo $row['titulo']?></td>
                         <td><?php echo $row['fechaInicio']?></td>
-                        <td><?php echo $row['fechaFinal']?></td>
                         <td><?php echo $row['lugar']?></td>
+                        <td><?php echo ($row['destacado'] == 'Y') ? 'Si': 'No';?></td>
                     <td class="text-center">
                         <a href="agenda-edit.php?id=<?php echo $row['id']?>"><i class="fas fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="agenda-actions.php?del=true&id=<?php echo $row['id']?>" onclick="return confirm('Desea continuar? Se eliminará el registro permanetemente')"><i class="fas fa-trash-alt"></i></a>
