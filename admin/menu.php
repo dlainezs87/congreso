@@ -36,6 +36,11 @@
                     <span>Expositor por Ponencia</span></a>
             </li>
             <li class="nav-item active">
+                <a class="nav-link" href="datosformulario.php">
+                <i class="fa-solid fa-align-justify"></i>
+                    <span>Datos Formulario</span></a>
+            </li>
+            <li class="nav-item active">
 
                 <a class="nav-link" href="sliders.php">
                     <i class="fas fa-image"></i>

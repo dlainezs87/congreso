@@ -19,30 +19,20 @@
                 <textarea class="form-control" name="contenido" id="contenido" cols="30" rows="5"></textarea>
             </div>
             <div class="form-group">
-                <label for="locacion">Locaci&oacute;n:</label>
-                <input type="text" required class="form-control" id="locacion" name="locacion" placeholder="">
-            </div>
-            <div class="form-group">
-
                 <label for="idAgenda">Agenda:</label>
                 <select name="idAgenda" class="form-select form-control" id="idAgenda">
                     <option value="-1">Seleccione una opci&oacute;n</option>
-
-                <select name="idAgenda" class="form-select form-control" id="idGaleria">
-
-                <?php
-                    include("conn.php");
-                    $sql = "select * from agenda order by id DESC";
-                    $query = $mysqli->query($sql);
-                    while($row = $query->fetch_assoc()){
-                ?>
+                    <?php
+                        include("conn.php");
+                        $sql = "select * from agenda order by id DESC";
+                        $query = $mysqli->query($sql);
+                        while($row = $query->fetch_assoc()){
+                    ?>
                     <option value="<?=$row['id']?>"><?= $row['titulo']?></option>
-                <?php 
-                ?>
-                <?php
-                    }
-                    $mysqli->close();
-                ?>
+                    <?php
+                        }
+                        $mysqli->close();
+                    ?>
                 </select>
             </div>
             <div class="form-group">

@@ -1,45 +1,39 @@
 <?php include("open.php");?>
 <!-- Page Heading -->
-
 <h1 class="h3 mb-2 text-gray-800">Expositor</h1>
-
-<h1 class="h3 mb-2 text-gray-800">Blogs</h1>
-
 <p class="mb-4">Agregar nuevo</p>
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-body">
-
         <form id="add" method="post" action="expositores-action.php" enctype="multipart/form-data">
-
-        <form id="add" method="post" action="blogs-actions.php" enctype="multipart/form-data">
-
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" required class="form-control" id="nombre" name="nombre" placeholder="">
+            <div class="row">
+                <div class="col-4 form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" required class="form-control" id="nombre" name="nombre" placeholder="">
+                </div>
+                <div class="col-4 form-group">
+                    <label for="pais">Pais:</label>
+                    <input type="text" required class="form-control" id="pais" name="pais" placeholder="">
+                </div>
+                <div class="col-4 form-group">
+                    <label for="profesion">Profesion:</label>
+                    <input type="text" class="form-control" id="profesion" name="profesion" placeholder="">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="pais">Pais:</label>
-                <input type="text" required class="form-control" id="pais" name="pais" placeholder="">
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label for="foto">Foto Expositor: * Recomendado: 600 x 600px</label>
+                    <input class="form-control" name="foto" id="foto" type="file"/>
+                </div>
+                <div class="col-6 form-group">
+                    <label for="bandera">Imagen Bandera: * Recomendado: 600 x 600px</label>
+                    <input class="form-control" name="bandera" id="bandera" type="file"/>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="edad">Edad:</label>
-                <input type="number" class="form-control" id="edad" name="edad" placeholder="">
+            <div class="row mt-3">
+                <button type="submit" class="btn btn-primary mr-2">Agregar</button>
+                <a  href="expositores.php" type="submit" class="btn btn-secondary">Regresar</a>
             </div>
-            <div class="form-group">
-                <label for="profesion">Profesion:</label>
-                <input type="text" class="form-control" id="profesion" name="profesion" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Imagen: * Recomendado: 600 x 600px</label>
-                <input class="form-control" name="imagen" id="imagen" type="file"/>
-            </div>
-            <button type="submit" class="btn btn-primary">Agregar</button>
-
-            <a  href="expositores.php" type="submit" class="btn btn-secondary">Regresar</a>
-
-            <a  href="blogs.php" type="submit" class="btn btn-secondary">Regresar</a>
-
             <input type="hidden" name="action" id="action" value="add">
         </form>
     </div>

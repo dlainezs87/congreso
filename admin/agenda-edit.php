@@ -14,12 +14,11 @@
     ?>
         <div class="card-body">
             <form id="edit" method="post" action="agenda-actions.php" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="titulo">Titulo:</label>
-                    <input type="text" required class="form-control" value="<?php echo $row['titulo'] ?>" id="titulo" name="titulo" placeholder="">
-                </div>
-
                 <div class="row">
+                    <div class="col-6 form-group">
+                        <label for="titulo">Titulo:</label>
+                        <input type="text" required class="form-control" value="<?php echo $row['titulo'] ?>" id="titulo" name="titulo" placeholder="">
+                    </div>
                     <div class="col-6 form-group">
                         <label for="fecha-hora">Fecha y Hora Inicio:</label>
                         <div class="input-group date" id="fecha-hora-inicio" data-target-input="nearest">
@@ -29,28 +28,20 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col-6 form-group">
-                        <label for="fechaFinal">Fecha y Hora Final:</label>
-                        <div class="input-group date" id="fecha-hora-final" data-target-input="nearest">
-                            <input type="text" class="form-control datetimepicker-input" data-target="#fecha-hora-final" name="fecha-hora-final" value="<?php echo $row['fechaFinal'] ?>"/>
-                            <div class="input-group-append" data-target="#fecha-hora-final" data-toggle="datetimepicker">
-                                <div class="input-group-text"><i class="fa-solid fa-calendar"></i></div>
-                            </div>
-                        </div>
+                        <label for="titulo">Lugar:</label>
+                        <input type="text" required class="form-control" value="<?php echo $row['lugar'] ?>" id="lugar" name="lugar" placeholder="">
                     </div>
-
-                <div class="form-group">
-                    <label for="fechaInicio">Fecha Inicio:</label>
-                    <input type="date" required class="form-control" value="<?php echo $row['fechaInicio'] ?>" id="fechaInicio" name="fechaInicio">
-                </div>
-                <div class="form-group">
-                    <label for="fechaFinal">Fecha Final:</label>
-                    <input type="date" required class="form-control" value="<?php echo $row['fechaFinal'] ?>" id="fechaFinal" name="fechaFinal">
-
-                </div>
-                <div class="form-group">
-                    <label for="titulo">Lugar:</label>
-                    <input type="text" required class="form-control" value="<?php echo $row['lugar'] ?>" id="lugar" name="lugar" placeholder="">
+                    <div class="col-6 form-group">
+                        <label for="destacado">Destacado:</label>
+                        <select name="destacado" class="form-select form-control" id="destacado">
+                            <option value="-1">Seleccione una opci&oacute;n</option>
+                            <option value="N" <?php echo ($row['destacado'] == 'N') ? 'selected': ''; ?>>No</option>
+                            <option value="Y" <?php echo ($row['destacado'] == 'Y') ? 'selected': ''; ?>>Si</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="contenido">Contenido:</label>
@@ -72,24 +63,10 @@
         $('#fecha-hora-inicio').datetimepicker({
             format: 'YYYY-MM-DD hh:mm:ss' // Cambia el formato de hora a 'HH:mm'
         });
-        $('#fecha-hora-final').datetimepicker({
-            format: 'YYYY-MM-DD hh:mm:ss' // Cambia el formato de hora a 'HH:mm'
-        });
     });
 
 
 </script>
-
-<?php
-        $mysqli->close();
-    } else {
-?><script>
-        window.open('agenda.php', '_self');
-    </script><?php
-
-    }
-include("footer.php"); ?>
-
 <!-- Archivos CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css">
@@ -100,9 +77,15 @@ include("footer.php"); ?>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>
+<?php
+        $mysqli->close();
+    } else {
+?>  <script>
+        window.open('agenda.php', '_self');
+    </script>
+<?php
+    }
 
-            }
-
-
-            include("footer.php"); ?>
+    include("footer.php"); 
+?>
 
