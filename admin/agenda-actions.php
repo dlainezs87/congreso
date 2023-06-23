@@ -6,6 +6,8 @@ if($_POST['action']=="add"){
     $contenido = addslashes($_POST['contenido']);
     $lugar = addslashes($_POST['lugar']);
     $destacado = addslashes($_POST['destacado']);
+    $expositor = addslashes($_POST['expositor']);
+    $rol = addslashes($_POST['rol']);
 
     $fechaI = addslashes($_POST['fecha-hora-inicio']);
     $fechaIni = date_create_from_format('m/d/Y h:i A', $fechaI);
@@ -18,18 +20,45 @@ if($_POST['action']=="add"){
             contenido,
             fechaInicio,
             lugar,
+            expositor,
+            rol,
             destacado
         )values(
         '".$titulo."',
         '".$contenido."',
         '".$fechaInicio."',
         '".$lugar."',
+        '".$expositor."',
+        '".$rol."',
         '".$destacado."'
     )";
 
     if($mysqli->query($sql)){ 
         $idgen = $mysqli->insert_id;
-       ?><script> window.open('agenda.php?ok','_self');</script><?php
+
+        $archivo = $_FILES['foto']['name'];
+        if (isset($archivo) && $archivo != "") {
+            $tipo = $_FILES['foto']['type'];
+            $tamano = $_FILES['foto']['size'];
+            $temp = $_FILES['foto']['tmp_name'];
+            if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 20000000))) {
+               $errorimg = true;
+            }else {
+                $nombrefinal = $idgen.$archivo;
+                if (move_uploaded_file($temp, '../assets/img/team/'.$nombrefinal)) {
+                    chmod('../assets/img/team/'.$nombrefinal, 0777);
+                    $sqlima = "update agenda set imagen = '".$nombrefinal."' where id = " . $idgen;
+                    $mysqli->query($sqlima);
+                }else {
+                    $errorimg = true;
+                }
+            }
+        }
+
+        
+        ?><script> window.open('agenda.php?ok','_self');</script><?php
+       
+       
     }else{ 
         ?><script> window.open('agenda.php?err','_self');</script><?php
     }
@@ -40,7 +69,8 @@ if($_POST['action']=="edit"){
     $contenido = addslashes($_POST['contenido']);
     $lugar = addslashes($_POST['lugar']);
     $destacado = addslashes($_POST['destacado']);
-
+    $expositor = addslashes($_POST['expositor']);
+    $rol = addslashes($_POST['rol']);
     $id = (int)addslashes($_POST['id']);
 
     $recibidaInicio = addslashes($_POST['fecha-hora-inicio']);
@@ -61,11 +91,37 @@ if($_POST['action']=="edit"){
                 contenido = '".$contenido."',
                 fechaInicio = '".$fechaInicio."',
                 lugar = '".$lugar."',
+                expositor = '".$expositor."',
+                rol = '".$rol."',
                 destacado = '".$destacado."'
                 where id = " . $id;
 
     if($mysqli->query($sql)){ 
-        ?><script> window.open('agenda.php?ok','_self');</script><?php
+        $idgen = $id;
+
+        $archivo = $_FILES['foto']['name'];
+        if (isset($archivo) && $archivo != "") {
+            $tipo = $_FILES['foto']['type'];
+            $tamano = $_FILES['foto']['size'];
+            $temp = $_FILES['foto']['tmp_name'];
+            if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 20000000))) {
+               $errorimg = true;
+            }else {
+                $nombrefinal = $idgen.$archivo;
+
+                if (move_uploaded_file($temp, '../assets/img/team/'.$nombrefinal)) {
+                    chmod('../assets/img/team/'.$nombrefinal, 0777);
+
+                    $sqlima = "update agenda set imagen = '".$nombrefinal."' where id = " . $idgen;
+                    $mysqli->query($sqlima);
+                }else {
+                    $errorimg = true;
+                }
+            }
+        }
+
+        
+       ?><script> window.open('agenda.php?ok','_self');</script><?php
     }else{ 
         ?><script> window.open('agenda.php?err','_self');</script><?php
     }

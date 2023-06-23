@@ -32,11 +32,10 @@ $row = $query->fetch_assoc()
 					<h4 style="padding-top:10px;"><?=$row['profesion']?></h4>
 					<h4 style="padding-top:10px;"><img style="width:30px;height:30px;border-radius:50%;" src="<?=base_url?>assets/img/team/<?=$row['bandera']?>">&nbsp; <?=$row['pais']?></h4>
 				</div>
-				
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-lg-10" style="border-right: 1px solid black;">
+			<div class="col-lg-12">
 				
 				<p><?=$row['resumen']?></p><br>
 
@@ -46,6 +45,8 @@ $row = $query->fetch_assoc()
 
 				<p><?=$row['contenido']?></p>
 			</div>
+
+			<!--
 			<div class="col-lg-2">
 				<h3>Fechas:</h3>
 				<div class="mt-5 mb-5">
@@ -56,7 +57,7 @@ $row = $query->fetch_assoc()
 					<p style="font-weight:bolder;">Viernes 2 Agosto</p>
 					<p style="font-weight:bolder;">8:00 am - 10:00 am</p>
 				</div>
-			</div>
+			</div>-->
 		</div>
 	</div>
 </section>

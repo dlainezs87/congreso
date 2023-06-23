@@ -13,7 +13,12 @@
                 </div>
                 <div class="col-6 form-group">
                     <label for="fecha-hora">Fecha y Hora Inicio:</label>
-                    
+                    <div class="input-group date" id="fecha-hora-inicio" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#fecha-hora-inicio" name="fecha-hora-inicio"/>
+                        <div class="input-group-append" data-target="#fecha-hora-inicio" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa-solid fa-calendar"></i></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -30,6 +35,22 @@
                     </select>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label for="expositor">Expositor(No indispensable):</label>
+                    <input type="text" required class="form-control" id="expositor" name="expositor" placeholder="">
+                </div>
+                <div class="col-6 form-group">
+                    <label for="rol">Rol(No indispensable):</label>
+                    <input type="text" required class="form-control" id="rol" name="rol" placeholder="">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 form-group">
+                    <label for="foto">Foto Expositor: * Recomendado: 600 x 600px (No indispensable)</label>
+                    <input class="form-control" name="foto" id="foto" type="file"/>
+                </div>
+            </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Contenido:</label>
                 <textarea class="form-control" name="contenido" id="contenido" cols="30" rows="10"></textarea>
@@ -44,9 +65,9 @@
 
 <script>
     CKEDITOR.replace('contenido');
-   $(function () {
+    $(document).ready(function() {
         $('#fecha-hora-inicio').datetimepicker({
-            format: 'L'
+            format: 'YYYY-MM-DD HH:mm' // Cambia el formato de hora a 'HH:mm'
         });
     });
 </script>
