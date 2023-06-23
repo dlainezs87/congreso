@@ -92,6 +92,6 @@
         </div>
 
       </div>
-    </section><!-- End Team Section -->
+    </section><!-- End expositores Section -->
 
 </main><!-- End #main -->

@@ -18,48 +18,96 @@
 
         <div class="row align-items-center">
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Tipo de cliente</h3>
-              <h4>$0<span>Incluye:</span></h4>
+              <h3>Miembros CIT y estudiantes activos</h3>
+              <h4>$50<span>Incluye:</span></h4>
               <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+                <li><span style="font-weight:bolder;">Viernes 21 de julio:</span> 1 coffee break mañana, 1 almuerzo, 1 coffee break tarde.</li>
+                <li><span style="font-weight:bolder;">Sábado 22 de julio:</span> 1 coffee break mañana, parrillada bailable.</li>
+                <li><span style="font-weight:bolder;">Material Didáctico</span>
+                <li><span style="font-weight:bolder;">Derecho a participar de las rifas del cierre</span></li>
+                  <ul>
+                    <li><span style="font-weight:bolder;">Actividades sociales:</span>
+                      <ul>
+                        <li>Coctel de bienvenida el viernes 21 de julio</li>
+                        <li>Parrillada bailable de clausura el sábado 22 de julio </li>
+                      </ul>
+                    </li>
+                  </ul>   
+                </li>
+                <li>Certificado de participación</li>
               </ul>
               <!--<a href="#" class="get-started-btn">Get Started</a>-->
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Tipo de cliente</h3>
-              <h4>$29<span>Incluye:</span></h4>
+              <h3>Profesionales de otras áreas (2 días)</h3>
+              <h4>$80<span>Incluye:</span></h4>
               <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+                <li><span style="font-weight:bolder;">Viernes 21 de julio:</span> 1 coffee break mañana, 1 almuerzo, 1 coffee break tarde.</li>
+                <li><span style="font-weight:bolder;">Sábado 22 de julio:</span> 1 coffee break mañana, parrillada bailable.</li>
+                <li><span style="font-weight:bolder;">Material Didáctico</span>
+                <li><span style="font-weight:bolder;">Derecho a participar de las rifas del cierre</span></li>
+                  <ul>
+                    <li><span style="font-weight:bolder;">Actividades sociales:</span>
+                      <ul>
+                        <li>Coctel de bienvenida el viernes 21 de julio</li>
+                        <li>Parrillada bailable de clausura el sábado 22 de julio </li>
+                      </ul>
+                    </li>
+                  </ul>   
+                </li>
+                <li>Certificado de participación</li>
               </ul>
-              
             </div>
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-lg-3">
             <div class="box" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Tipo de cliente</h3>
-              <h4>$49<span>Incluye:</span></h4>
+              <h3>Miembros CIT asistencia 1 solo día</h3>
+              <h4>$30<span>Incluye:</span></h4>
               <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+                <li><span style="font-weight:bolder;">Viernes 21 de julio:</span> 1 coffee break mañana, 1 almuerzo, 1 coffee break tarde.</li>
+                <li><span style="font-weight:bolder;">Sábado 22 de julio:</span> 1 coffee break mañana, parrillada bailable.</li>
+                <li><span style="font-weight:bolder;">Material Didáctico</span>
+                <li><span style="font-weight:bolder;">Derecho a participar de las rifas del cierre</span></li>
+                  <ul>
+                    <li><span style="font-weight:bolder;">Actividades sociales:</span>
+                      <ul>
+                        <li>Coctel de bienvenida el viernes 21 de julio</li>
+                        <li>Parrillada bailable de clausura el sábado 22 de julio </li>
+                      </ul>
+                    </li>
+                  </ul>   
+                </li>
+                <li>Certificado de participación</li>
               </ul>
-              
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
+              <h3>Profesionales de otras áreas (1 día)</h3>
+              <h4>$50<span>Incluye:</span></h4>
+              <ul>
+                <li><span style="font-weight:bolder;">Viernes 21 de julio:</span> 1 coffee break mañana, 1 almuerzo, 1 coffee break tarde.</li>
+                <li><span style="font-weight:bolder;">Sábado 22 de julio:</span> 1 coffee break mañana, parrillada bailable.</li>
+                <li><span style="font-weight:bolder;">Material Didáctico</span>
+                <li><span style="font-weight:bolder;">Derecho a participar de las rifas del cierre</span></li>
+                  <ul>
+                    <li><span style="font-weight:bolder;">Actividades sociales:</span>
+                      <ul>
+                        <li>Coctel de bienvenida el viernes 21 de julio</li>
+                        <li>Parrillada bailable de clausura el sábado 22 de julio </li>
+                      </ul>
+                    </li>
+                  </ul>   
+                </li>
+                <li>Certificado de participación</li>
+              </ul>
             </div>
           </div>
 

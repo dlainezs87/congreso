@@ -1,3 +1,11 @@
+<?php
+include("config/conexion.php");
+
+$sql = "select * from sliders order by id DESC";
+$query = $mysqli->query($sql);
+
+?>
+
 <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -6,42 +14,22 @@
 
       <div class="carousel-inner" role="listbox">
 
-        <!-- Slide 1 -->
-        <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg)">
+        <?php 
+          while($row = $query->fetch_assoc()){
+        ?>
+        <div class="carousel-item active" style="background-image: url(<?=base_url?>assets/img/slide/<?=$row['imagen']?>)">
           <div class="carousel-container">
             <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Aquí va el titulo del evento</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a>
-              <a style="background: transparent;" href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-calendar-date"></i> &nbsp;Programa del congreso</a>
+              <h2 class="animate__animated animate__fadeInDown"><?=$row['nombre']?></h2>
+              <p class="animate__animated animate__fadeInUp"><?=$row['titulo']?></p>
+              <a href="<?=base_url?>?pag=register-inner" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a>
+              <a style="background: transparent;" href="<?=base_url?>?pag=program-inner" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-calendar-date"></i> &nbsp;Programa del congreso</a>
             </div>
           </div>
         </div>
-
-        <!-- Slide 2 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Aquí va el titulo del evento 2</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a>
-              <a style="background: transparent;" href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-calendar-date"></i> &nbsp;Programa del congreso</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg)">
-          <div class="carousel-container">
-            <div class="container">
-              <h2 class="animate__animated animate__fadeInDown">Aquí va el titulo del evento 3</h2>
-              <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-              <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a>
-              <a style="background: transparent;" href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-calendar-date"></i> &nbsp;Programa del congreso</a>
-            </div>
-          </div>
-        </div>
-
+        <?php 
+          }
+        ?>
       </div>
 
       <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">

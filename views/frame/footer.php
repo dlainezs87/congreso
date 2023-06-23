@@ -47,8 +47,8 @@
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Eje Temático</h4>
-            <p>Geomatics Ordenamiento TerritorialEjercicio Profesional</p>
-          </div>
+            <p>Geomatics Ordenamiento Territorial Ejercicio Profesional</p>
+          </div> 
 
         </div>
       </div>

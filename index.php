@@ -35,6 +35,13 @@ if(!isset($_GET['pag'])){
                   require_once"views/inner-pages/program-inner.php";
               }
             break;
+            case 'detail-inner':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/detail-inner.php'; 
+              }else {
+                require_once"views/inner-pages/detail-inner.php";
+              }
+            break;
         default:
             break;
     }

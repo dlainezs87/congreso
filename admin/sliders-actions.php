@@ -31,7 +31,7 @@ if(isset($_POST['action'])&&$_POST['action']=="add"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo;
-                if (move_uploaded_file($temp, '../assets/sliders/'.$nombrefinal)) {
+                if (move_uploaded_file($temp, '../assets/img/slide/'.$nombrefinal)) {
                     chmod('../assets/sliders/'.$nombrefinal, 0777);
                     $sqlima = "update sliders set imagen = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
@@ -78,8 +78,8 @@ if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || 
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo;
-                if (move_uploaded_file($temp, '../assets/sliders/'.$nombrefinal)) {
-                    chmod('../assets/sliders/'.$nombrefinal, 0777);
+                if (move_uploaded_file($temp, '../assets/img/slide/'.$nombrefinal)) {
+                    chmod('../assets/img/slide/'.$nombrefinal, 0777);
                     $sqlima = "update sliders set imagen = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {

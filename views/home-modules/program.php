@@ -1,3 +1,12 @@
+<?php
+include("config/conexion.php");
+
+$sql = "select * from agenda order by id DESC";
+$query = $mysqli->query($sql);
+
+?>
+
+
 <section class="about" style="background: linear-gradient(to right, white 0%, white 50%, #F7F7F7 50%, #F7F7F7 100%);">
 	<div class="container">
 		<div class="row content">
@@ -14,6 +23,9 @@
 
 	<div class="container">
 		<div class="row content">
+			<?php 
+	          while($row = $query->fetch_assoc()){
+	        ?>
 			<div style="margin-top:30px;" class="col-lg-12">
 				<div class="row program-container">
 					<div style="background:#2C5976;padding:30px;" class="col-lg-4">
@@ -40,6 +52,9 @@
 					</div>
 				</div>
 			</div>
+			<?php 
+	          }
+	        ?>
 			<div style="margin-top:30px;" class="col-lg-12">
 				<div class="row program-container">
 					<div style="background:#2C5976;padding:30px;" class="col-lg-4">
