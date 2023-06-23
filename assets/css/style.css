@@ -706,7 +706,7 @@ section {
 }
 
 .why-us .content {
-  padding: 60px 100px 0 100px;
+  padding: 60px 50px 0 50px;
 }
 
 .why-us .content h3 {
@@ -730,8 +730,9 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  min-height: 400px;
+  min-height: 500px;
   position: relative;
+  margin:30px;
 }
 
 .why-us .accordion-list {
@@ -1894,4 +1895,43 @@ section {
 .form-control {
     font-size:14px !important;
     color: #212529;
+}
+
+/*--------------------------------------------------------------
+# contador
+--------------------------------------------------------------*/
+
+.contador{
+  width:90%;
+  margin:0 auto;
+  font-size:70px;
+  font-weight:bolder;
+}
+
+.dias{margin:0 50px 0 70px;}
+
+.horas{margin:0 50px 0 45px;}
+
+.minutos{margin:0 90px 0 40px;}
+
+.segundos{margin:0 0 0 0;}
+
+
+@media (min-width: 320px) and (max-width: 580px) {
+
+  .contador{
+    width:90%;
+    margin:0 auto;
+    font-size:28px;
+    font-weight:bolder;
+  }
+
+  .dias{font-size:9px; margin:0 25px 0 30px;}
+
+  .horas{font-size:9px; margin:0 25px 0 0;}
+
+  .minutos{font-size:9px; margin:0 20px 0 0;}
+
+  .segundos{font-size:9px; margin:0 10px 0 0;}
+
 }

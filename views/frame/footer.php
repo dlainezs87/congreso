@@ -79,6 +79,49 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+<!-- contador -->
+<script>
+function calcularTiempoRestante(fechaObjetivo) {
+  var fechaActual = new Date().getTime();
+  var diferencia = fechaObjetivo - fechaActual;
+
+  var dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+  var horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+  var segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+  return {
+    dias: dias,
+    horas: horas,
+    minutos: minutos,
+    segundos: segundos
+  };
+}
+
+// Función para mostrar el contador regresivo
+function mostrarContadorRegresivo(fechaObjetivo) {
+  var contadorElemento = document.getElementById('contador');
+
+  // Actualizar el contador cada segundo
+  var contadorIntervalo = setInterval(function() {
+    var tiempoRestante = calcularTiempoRestante(fechaObjetivo);
+
+    // Mostrar el contador en el elemento HTML
+    contadorElemento.innerHTML = '&nbsp;&nbsp;' + tiempoRestante.dias + '&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.horas + '&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.minutos + '&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.segundos + '';
+
+    // Detener el contador cuando llegue a cero
+    if (tiempoRestante.dias <= 0 && tiempoRestante.horas <= 0 && tiempoRestante.minutos <= 0 && tiempoRestante.segundos <= 0) {
+      clearInterval(contadorIntervalo);
+      contadorElemento.innerHTML = '¡Tiempo terminado!';
+    }
+  }, 1000); // 1000 milisegundos = 1 segundo
+}
+
+// Ejemplo de uso
+var fechaObjetivo = new Date('2023-07-02T00:00:00'); // Fecha y hora objetivo en formato ISO 8601
+mostrarContadorRegresivo(fechaObjetivo);
+</script>
+
 </body>
 
 </html>

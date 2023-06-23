@@ -49,9 +49,9 @@
           <li><a class="nav-link scrollto active" href="<?=base_url?>">Inicio</a></li>
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=program-inner">Programa</a></li>
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=exhibitors-inner">Expositores</a></li>
-          <li><a class="nav-link scrollto" href="#services">Ponencias</a></li>
+          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=ponencia-inner">Ponencias</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Patrocinadores</a></li>
-          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=detail-inner">Contacto</a></li>
+          <!--<li><a class="nav-link scrollto" href="<?=base_url?>?pag=detail-inner">Contacto</a></li>-->
           <!--<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
