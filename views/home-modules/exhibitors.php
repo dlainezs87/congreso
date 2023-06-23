@@ -23,7 +23,7 @@ $query = $mysqli->query($sql);
               <img src="<?=base_url?>assets/img/team/<?=$row['foto']?>" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
-                  <h4><?=$row['nombre']?></h4>
+                  <a href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>"><h4><?=$row['nombre']?></h4></a>
                   <p style="font-size:12px;color: white;"><span style="font-weight:bolder;">Ponencia:</span><?=$row['profesion']?></p>
                 </div>
                 <div class="social">

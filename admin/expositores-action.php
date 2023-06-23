@@ -6,16 +6,19 @@ if($_POST['action']=="add"){
     $nombre    = addslashes($_POST['nombre']);
     $pais      = addslashes($_POST['pais']);
     $profesion = addslashes($_POST['profesion']);
+    $resumen = addslashes($_POST['resumen']);
 
     //insert
     $sql = "insert into expositores(
                 nombre,
                 pais,
-                profesion
+                profesion,
+                resumen
             )values(
                 '".$nombre."',
                 '".$pais."',
-                '".$profesion."'
+                '".$profesion."',
+                '".$resumen."'
             );";
 
     if($mysqli->query($sql)){ 
@@ -30,13 +33,8 @@ if($_POST['action']=="add"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo;
-<<<<<<< Updated upstream
-                if (move_uploaded_file($temp, '../assets/img/expositores/'.$nombrefinal)) {
-                    chmod('../assets/img/expositores/'.$nombrefinal, 0777);
-=======
                 if (move_uploaded_file($temp, '../assets/img/team/'.$nombrefinal)) {
                     chmod('../assets/img/team/'.$nombrefinal, 0777);
->>>>>>> Stashed changes
                     $sqlima = "update expositores set foto = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {
@@ -54,8 +52,8 @@ if($_POST['action']=="add"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo1;
-                if (move_uploaded_file($temp, '../assets/img/expositores/'.$nombrefinal)) {
-                    chmod('../assets/img/expositores/'.$nombrefinal, 0777);
+                if (move_uploaded_file($temp, '../assets/img/team/'.$nombrefinal)) {
+                    chmod('../assets/img/team/'.$nombrefinal, 0777);
                     $sqlima = "update expositores set bandera = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {
@@ -77,6 +75,7 @@ if($_POST['action']=="edit"){
     $nombre    = addslashes($_POST['nombre']);
     $pais      = addslashes($_POST['pais']);
     $profesion = addslashes($_POST['profesion']);
+    $resumen = addslashes($_POST['resumen']);
     $id        = (int)addslashes($_POST['id']);
 
     //insert
@@ -84,7 +83,8 @@ if($_POST['action']=="edit"){
     $sql = "update expositores set 
                 nombre = '".$nombre."',
                 pais = '".$pais."',
-                profesion = '".$profesion."'
+                profesion = '".$profesion."',
+                resumen = '".$resumen."'
                 where id = " . $id;
 
     if($mysqli->query($sql)){ 
@@ -99,13 +99,10 @@ if($_POST['action']=="edit"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo;
-<<<<<<< Updated upstream
-                if (move_uploaded_file($temp, '../assets/img/expositores/'.$nombrefinal)) {
-                    chmod('../assets/img/expositores/'.$nombrefinal, 0777);
-=======
+
                 if (move_uploaded_file($temp, '../assets/img/team/'.$nombrefinal)) {
                     chmod('../assets/img/team/'.$nombrefinal, 0777);
->>>>>>> Stashed changes
+
                     $sqlima = "update expositores set foto = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {
@@ -123,8 +120,8 @@ if($_POST['action']=="edit"){
                $errorimg = true;
             }else {
                 $nombrefinal = $idgen.$archivo1;
-                if (move_uploaded_file($temp, '../assets/img/expositores/'.$nombrefinal)) {
-                    chmod('../assets/img/expositores/'.$nombrefinal, 0777);
+                if (move_uploaded_file($temp, '../assets/img/team/'.$nombrefinal)) {
+                    chmod('../assets/img/team/'.$nombrefinal, 0777);
                     $sqlima = "update expositores set bandera = '".$nombrefinal."' where id = " . $idgen;
                     $mysqli->query($sqlima);
                 }else {

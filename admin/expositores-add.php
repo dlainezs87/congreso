@@ -19,6 +19,10 @@
                     <label for="profesion">Profesion:</label>
                     <input type="text" class="form-control" id="profesion" name="profesion" placeholder="">
                 </div>
+                <div class="form-group">
+                    <label for="contenido">Resumen de expositor:</label>
+                    <textarea class="form-control" name="resumen" id="resumen" cols="30" rows="5"></textarea>
+                </div>
             </div>
             <div class="row">
                 <div class="col-6 form-group">
@@ -38,4 +42,7 @@
         </form>
     </div>
 </div>
+<script>  
+    CKEDITOR.replace('resumen'); 
+</script>
  <?php include("footer.php");?>

@@ -10,7 +10,7 @@ if($_POST['action']=="add"){
     $fechaI = addslashes($_POST['fecha-hora-inicio']);
     $fechaIni = date_create_from_format('m/d/Y h:i A', $fechaI);
     $fechaInicio = date_format($fechaIni, 'Y-m-d H:i:s');
-    $fechaInicio = addslashes($_POST['fechaInicio']);
+    
 
     //insert
     $sql = "insert into agenda(

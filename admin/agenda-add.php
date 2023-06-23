@@ -13,12 +13,7 @@
                 </div>
                 <div class="col-6 form-group">
                     <label for="fecha-hora">Fecha y Hora Inicio:</label>
-                    <div class="input-group date" id="fecha-hora-inicio" data-target-input="nearest">
-                        <input type="text" class="form-control datetimepicker-input" data-target="#fecha-hora-inicio" name="fecha-hora-inicio"/>
-                        <div class="input-group-append" data-target="#fecha-hora-inicio" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa-solid fa-calendar"></i></div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
             <div class="row">
@@ -49,9 +44,9 @@
 
 <script>
     CKEDITOR.replace('contenido');
-    $(document).ready(function() {
+   $(function () {
         $('#fecha-hora-inicio').datetimepicker({
-            format: 'YYYY-MM-DD HH:mm' // Cambia el formato de hora a 'HH:mm'
+            format: 'L'
         });
     });
 </script>
