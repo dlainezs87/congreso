@@ -120,7 +120,7 @@ function mostrarContadorRegresivo(fechaObjetivo) {
 }
 
 // Ejemplo de uso
-var fechaObjetivo = new Date('2023-07-22T00:00:00'); // Fecha y hora objetivo en formato ISO 8601
+var fechaObjetivo = new Date('2023-08-23T10:00:00'); // Fecha y hora objetivo en formato ISO 8601
 mostrarContadorRegresivo(fechaObjetivo);
 </script>
 

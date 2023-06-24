@@ -1607,6 +1607,10 @@ section {
   border-radius: 4px;
 }
 
+.contact .php-email-form select{
+  padding: 10px 15px;
+}
+
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
   border-color: #ed502e;

@@ -2,17 +2,17 @@
 include("conn.php");
 if($_POST['action']=="add"){
     //get values
-    $Nombre = (isset($_POST['Nombre'])) ? filter_var($_POST['Nombre'], FILTER_SANITIZE_STRING): '';
-    $Apellidos = (isset($_POST['Apellidos'])) ? filter_var($_POST['Apellidos'], FILTER_SANITIZE_STRING): '';
-    $Email = (isset($_POST['Email'])) ? filter_var($_POST['Email'], FILTER_SANITIZE_STRING): '';
-    $Telefono = (isset($_POST['Telefono'])) ? filter_var($_POST['Telefono'], FILTER_SANITIZE_STRING): '';
-    $Participacion = (isset($_POST['Participacion'])) ? filter_var($_POST['Participacion'], FILTER_SANITIZE_STRING): '';
-    $Carnet = (isset($_POST['Carnet'])) ? filter_var($_POST['Carnet'], FILTER_SANITIZE_STRING): '';
-    $FormaPago = (isset($_POST['FormaPago'])) ? filter_var($_POST['FormaPago'], FILTER_SANITIZE_STRING): '';
-    $Empresa = (isset($_POST['Empresa'])) ? filter_var($_POST['Empresa'], FILTER_SANITIZE_STRING): '';
-    $Pais = (isset($_POST['Pais'])) ? filter_var($_POST['Pais'], FILTER_SANITIZE_STRING): '';
-    $Fecha = (isset($_POST['Fecha'])) ? filter_var($_POST['Fecha'], FILTER_SANITIZE_STRING): '';
-    $Mensaje = (isset($_POST['Mensaje'])) ? filter_var($_POST['Mensaje'], FILTER_SANITIZE_STRING): '';
+    $Nombre = (isset($_POST['nombre'])) ? filter_var($_POST['nombre'], FILTER_SANITIZE_STRING): '';
+    $Apellidos = (isset($_POST['apellido'])) ? filter_var($_POST['apellido'], FILTER_SANITIZE_STRING): '';
+    $Email = (isset($_POST['email'])) ? filter_var($_POST['email'], FILTER_SANITIZE_STRING): '';
+    $Telefono = (isset($_POST['telefono'])) ? filter_var($_POST['telefono'], FILTER_SANITIZE_STRING): '';
+    $Participacion = (isset($_POST['participacion'])) ? filter_var($_POST['participacion'], FILTER_SANITIZE_STRING): '';
+    $Carnet = (isset($_POST['carnet'])) ? filter_var($_POST['carnet'], FILTER_SANITIZE_STRING): '';
+    $FormaPago = (isset($_POST['formaPago'])) ? filter_var($_POST['formaPago'], FILTER_SANITIZE_STRING): '';
+    $Empresa = (isset($_POST['empresa'])) ? filter_var($_POST['empresa'], FILTER_SANITIZE_STRING): '';
+    $Pais = (isset($_POST['pais'])) ? filter_var($_POST['pais'], FILTER_SANITIZE_STRING): '';
+    $Fecha = (isset($_POST['fecha'])) ? filter_var($_POST['fecha'], FILTER_SANITIZE_STRING): '';
+    $Mensaje = (isset($_POST['mensaje'])) ? filter_var($_POST['mensaje'], FILTER_SANITIZE_STRING): '';
 
     //insert
     $sql = "insert into datosformulario(
@@ -25,6 +25,7 @@ if($_POST['action']=="add"){
             `FormaPago`,
             `Empresa`,
             `Pais`,
+            `fecha`,
             `Mensaje`
         )values(
         '".$Nombre."',

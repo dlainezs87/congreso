@@ -120,7 +120,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form id="add" action="admin/datosformulario-actions.php" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
               <h2 style="text-align:center;">¿Desea inscribirse?</h2 >
               <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
               <div class="row mt-3">
@@ -133,50 +133,56 @@
               </div>
 
               <div class="row mt-3">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="apellido" class="form-control" id="apellido2" placeholder="Segundo Apellido:" required>
-                </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="email" class="form-control" name="email" id="email" placeholder="Email:" required>
                 </div>
-              </div>
 
-              <div class="row mt-3">
                 <div class="col-md-6 form-group">
                   <input type="text" name="telefono" class="form-control" id="telefono" placeholder="Teléfono:" required>
                 </div>
+              </div>
+
+              <div class="row mt-3">
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <div>
-                    <select class="form-control">
+                    <select class="form-control" name="participacion">
                       <option selected>Tipo de inscripción:</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="Miembros CIT y estudiantes activos">Miembros CIT y estudiantes activos</option>
+                      <option value="Profesionales de otras áreas (2 días)">Profesionales de otras áreas (2 días)</option>
+                      <option value="Miembros CIT asistencia 1 solo día">Miembros CIT asistencia 1 solo día</option>
+                      <option value="Profesionales de otras áreas (1 día)">Profesionales de otras áreas (1 día)</option>
                     </select>
                   </div>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="carnet" class="form-control" id="carnet" placeholder="Carné:" required>
                 </div>
               </div>
 
               <div class="row mt-3">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="carne" class="form-control" id="carne" placeholder="Carné:" required>
-                </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <select class="form-control">
+                  <select class="form-control" name="formapago">
                       <option selected>Tipo de pago:</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+                      <option value="Sinpe">Sinpe</option>
+                      <option value="Transferencia">Transferencia</option>
                     </select>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="empresa" class="form-control" id="empresa" placeholder="Empresa:" required>
                 </div>
               </div>
 
                <div class="row mt-3">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="empresa" class="form-control" id="empresa" placeholder="Empresa:" required>
-                </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <input type="text" class="form-control" name="pais" id="pais" placeholder="País:" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <select class="form-control" name="fecha">
+                      <option selected>Fecha:</option>
+                      <option value="24/7/23">24/7/23</option>
+                      <option value="28/7/23">28/7/23</option>
+                      <option value="Todas">Todas</option>
+                    </select>
                 </div>
               </div>
 
@@ -184,11 +190,12 @@
                 <textarea class="form-control" name="mensaje" rows="5" placeholder="Mensaje:" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Enviando..</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
+                <div class="sent-message">Su mensaje ha sido enviado. Gracias!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Enviar</button></div>
+              <input type="hidden" name="action" id="action" value="add">
             </form>
           </div>
         </div>

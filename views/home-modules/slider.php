@@ -22,7 +22,7 @@ $query = $mysqli->query($sql);
             <div class="container">
               <h2 class="animate__animated animate__fadeInDown"><?=$row['nombre']?></h2>
               <p class="animate__animated animate__fadeInUp"><?=$row['titulo']?></p>
-              <a href="<?=base_url?>?pag=register-inner" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-person-fill-add"></i> &nbsp;Inscripciones</a>
+              <a href="<?=$row['enlace']?>" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-search"></i> &nbsp;Ver detalle</a>
               <a style="background: transparent;" href="<?=base_url?>?pag=program-inner" class="btn-get-started animate__animated animate__fadeInUp scrollto"><i style="font-size:18px;" class="bi-calendar-date"></i> &nbsp;Programa del congreso</a>
             </div>
           </div>
