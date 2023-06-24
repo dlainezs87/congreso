@@ -109,7 +109,7 @@ function mostrarContadorRegresivo(fechaObjetivo) {
     var tiempoRestante = calcularTiempoRestante(fechaObjetivo);
 
     // Mostrar el contador en el elemento HTML
-    contadorElemento.innerHTML = tiempoRestante.dias + '<span style="font-size:12px;">(Días)</span>&nbsp;&nbsp;' + tiempoRestante.horas + '<span style="font-size:12px;">(Horas)</span>&nbsp;&nbsp;' + tiempoRestante.minutos + '<span style="font-size:12px;">(Minutos)</span>&nbsp;&nbsp;' + tiempoRestante.segundos + '<span style="font-size:12px;">(Segundos)</span>';
+    contadorElemento.innerHTML = tiempoRestante.dias + '<span style="font-size:12px;">(Días)</span>&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.horas + '<span style="font-size:12px;">(Horas)</span>&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.minutos + '<span style="font-size:12px;">(Minutos)</span>&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.segundos + '<span style="font-size:12px;">(Segundos)</span>';
 
     // Detener el contador cuando llegue a cero
     if (tiempoRestante.dias <= 0 && tiempoRestante.horas <= 0 && tiempoRestante.minutos <= 0 && tiempoRestante.segundos <= 0) {

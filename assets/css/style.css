@@ -1859,7 +1859,7 @@ section {
 @media (min-width: 320px) and (max-width: 580px) {
   .count-container{
     position: relative;
-    width:80%;
+    width:100%;
     margin:0 auto;
     background:white;
     box-shadow: 0px 0px 40px -23px rgba(0,0,0,0.64);
@@ -1916,94 +1916,41 @@ section {
 --------------------------------------------------------------*/
 
 .contador{
-  width:60%;
+  width:73%;
   margin:0 auto;
-  font-size:70px;
+  font-size:60px;
   font-weight:bolder;
+  margin-top:25px;
 }
 
-.contador-text{
-    width:70%;
-    margin:0 auto;
-  }
-
-.dias{margin:0 20px 0 50px;}
-
-.horas{margin:0 50px 0 45px;}
-
-.minutos{margin:0 80px 0 40px;}
-
-.segundos{margin:0 0 0 0;}
 
 @media (min-width: 1400px) and (max-width: 1600px) {
-
   .contador{
     width:73%;
     margin:0 auto;
-    font-size:70px;
+    font-size:60px;
     font-weight:bolder;
+    margin-top:25px;
   }
-
-  .contador-text{
-    width:90%;
-    margin:0 auto;
-  }
-
-  .dias{margin:0 50px 0 55px;}
-
-  .horas{margin:0 50px 0 45px;}
-
-  .minutos{margin:0 80px 0 40px;}
-
-  .segundos{margin:0 0 0 0;}
-
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
-
   .contador{
-    width:93%;
-    margin:0 auto;
-    font-size:70px;
-    font-weight:bolder;
-  }
-
-  .contador-text{
     width:90%;
     margin:0 auto;
+    font-size:50px;
+    font-weight:bolder;
+    margin-top:25px;
   }
-
-  .dias{margin:0 50px 0 55px;}
-
-  .horas{margin:0 50px 0 25px;}
-
-  .minutos{margin:0 80px 0 40px;}
-
-  .segundos{margin:0 0 0 0;}
-
 }
 
 
 @media (min-width: 320px) and (max-width: 580px) {
-
   .contador{
-    width:75%;
+    width:100%;
     margin:0 auto;
-    font-size:28px;
+    font-size:16px;
     font-weight:bolder;
+    margin-top:0px;
   }
-
-  .contador-text{
-    width:90%;
-    margin:0 auto;
-  }
-
-  .dias{font-size:9px; margin:0 20px 0 18px;}
-
-  .horas{font-size:9px; margin:0 25px 0 0;}
-
-  .minutos{font-size:9px; margin:0 20px 0 0;}
-
-  .segundos{font-size:9px; margin:0 10px 0 0;}
-
 }
