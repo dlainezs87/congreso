@@ -6,13 +6,7 @@
 					<p style="padding-top:18px;text-align:center;font-size:32px;font-weight:bolder;color:white;">Nuestro evento comenzará en:</p>
 				</div>
 				<div class="col-lg-8">
-					<div id="contador" class="contador"></div>
-					<p>
-						<span class="dias" >Días</span>
-						<span class="horas" >Horas</span>
-						<span class="minutos" >Minutos</span>
-						<span class="segundos" >Segundos</span>
-					</p>
+					<div id="contador" class="contador pt-3"></div>
 				</div>
 			</div>
 		</div>

@@ -20,39 +20,22 @@
                         <div class="card-body">
                         <form id="add" method="post" action="patrocinadores-actions.php"  enctype="multipart/form-data">
                            
-                        
-                      <div class="form-group">
-                                <label for="exampleInputEmail1">Descripción:</label>
-                                <textarea class="form-control" name="descripcion" id="descripcion" cols="30" rows="10"><?php echo $row['descripcion']?></textarea>
-                            </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Tipo</label>
-                                <select class="form-control" name="tipo">
-                                    <?php
-                                        include("conn.php");
-                                        $sql = "select * from tipospatrocinador order by id DESC";
-                                        $query = $mysqli->query($sql);
-                                        while($row2 = $query->fetch_assoc()){
-                                            if($row['tipoPatrocinador']==$row2['id']){
-                                                
-                                            
-                                        ?>
-                                    <option selected value='<?=$row2['id']?>'><?=$row2['descripcion']?></option>
-                                        <?php 
-                                        } else {
-                                            ?>
-                                                 <option value='<?=$row2['id']?>'><?=$row2['descripcion']?></option>
-                                                
-                                                
-                                                <?php
-                                        } 
-                                            ?>
-                                        }
-                                        }//while
-                                        $mysqli->close();?>
-                                </select>
+                                <label for="exampleInputEmail1">Titulo:</label>
+                                <input type="text" required class="form-control" id="titulo" name="titulo" placeholder="">
                             </div>
-            
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Link:</label>
+                                <input type="text" required class="form-control" id="link" name="link" placeholder="">
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-6 form-group">
+                                    <label for="imagen">Logo patrocinador: * Recomendado: 191 x 59px</label>
+                                    <input class="form-control" name="imegen" id="imegen" type="file"/>
+                                </div>
+                            </div>
 
                         
                             <?php
@@ -63,14 +46,6 @@
                             </div>
                             <?php } ?>
 
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Imagen: * Recomendado 370 x 243px</label>
-                                <input class="form-control" name="imagen" id="imagen" type="file"/>
-                            </div>
-
-                       
-
-       
                             
                             <button type="submit" class="btn btn-primary">Editar</button>
                             <a href="servicios.php" class="btn btn-secondary">Regresar</a>

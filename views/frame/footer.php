@@ -96,6 +96,8 @@ function calcularTiempoRestante(fechaObjetivo) {
     minutos: minutos,
     segundos: segundos
   };
+
+
 }
 
 // Función para mostrar el contador regresivo
@@ -107,7 +109,7 @@ function mostrarContadorRegresivo(fechaObjetivo) {
     var tiempoRestante = calcularTiempoRestante(fechaObjetivo);
 
     // Mostrar el contador en el elemento HTML
-    contadorElemento.innerHTML = '&nbsp;&nbsp;' + tiempoRestante.dias + '&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.horas + '&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.minutos + '&nbsp;&nbsp;&nbsp;&nbsp;' + tiempoRestante.segundos + '';
+    contadorElemento.innerHTML = tiempoRestante.dias + '<span style="font-size:12px;">(Días)</span>&nbsp;&nbsp;' + tiempoRestante.horas + '<span style="font-size:12px;">(Horas)</span>&nbsp;&nbsp;' + tiempoRestante.minutos + '<span style="font-size:12px;">(Minutos)</span>&nbsp;&nbsp;' + tiempoRestante.segundos + '<span style="font-size:12px;">(Segundos)</span>';
 
     // Detener el contador cuando llegue a cero
     if (tiempoRestante.dias <= 0 && tiempoRestante.horas <= 0 && tiempoRestante.minutos <= 0 && tiempoRestante.segundos <= 0) {
@@ -118,7 +120,7 @@ function mostrarContadorRegresivo(fechaObjetivo) {
 }
 
 // Ejemplo de uso
-var fechaObjetivo = new Date('2023-07-02T00:00:00'); // Fecha y hora objetivo en formato ISO 8601
+var fechaObjetivo = new Date('2023-07-22T00:00:00'); // Fecha y hora objetivo en formato ISO 8601
 mostrarContadorRegresivo(fechaObjetivo);
 </script>
 
