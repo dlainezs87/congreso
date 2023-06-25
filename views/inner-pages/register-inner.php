@@ -120,7 +120,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <form id="add" action="admin/datosformulario-actions.php" method="post" role="form" class="php-email-form" enctype="multipart/form-data">
+            <form id="add" action="admin/datosformulario-actions.php" method="post" role="form" class="php-email-form-2" >
               <h2 style="text-align:center;">¿Desea inscribirse?</h2 >
               <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
               <div class="row mt-3">

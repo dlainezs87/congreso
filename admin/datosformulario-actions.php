@@ -42,7 +42,9 @@ if($_POST['action']=="add"){
     )";
 
     if($mysqli->query($sql)){ 
-        return true;
+        echo "<script>
+            alert('Gracias por tu contacto! en breves nos estaremos comunicando');
+                    window.location='http://localhost/congreso/?pag=register-inner'</script>";
     }else{ 
         return false;
     }
