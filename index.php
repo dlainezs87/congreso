@@ -49,6 +49,13 @@ if(!isset($_GET['pag'])){
                 require_once"views/inner-pages/ponencia-inner.php";
               }
             break;
+            case 'registar-brand-inner':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/registar-brand-inner.php'; 
+              }else {
+                require_once"views/inner-pages/registar-brand-inner.php";
+              }
+            break;
         default:
             break;
     }

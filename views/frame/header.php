@@ -50,7 +50,7 @@
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=program-inner">Programa</a></li>
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=exhibitors-inner">Expositores</a></li>
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=ponencia-inner">Ponencias</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Patrocinadores</a></li>
+          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=registar-brand-inner">Inscripción Patrocinador</a></li>
           <!--<li><a class="nav-link scrollto" href="<?=base_url?>?pag=detail-inner">Contacto</a></li>-->
           <!--<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

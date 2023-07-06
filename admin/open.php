@@ -9,7 +9,7 @@ if(!isset($_SESSION['sesid'])){
 <html lang='es'>
 <head>  
    
-<title>Admin AngFer</title>
+<title>Admin CIT</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,user scalable=no, initial-scale=1.0, maximun-scale=1.0">
   <meta name="description" content="Empresa lider en la gestión y operación de proyectos forestales, trámites legales, permisos forestales, permisos de corta de árboles">
@@ -49,7 +49,7 @@ if(!isset($_SESSION['sesid'])){
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fas fa-shield-alt"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">AngFer</div>
+                <div class="sidebar-brand-text mx-3">CIT</div>
             </a>
 
             <!-- Divider -->
