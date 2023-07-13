@@ -31,7 +31,7 @@
                     <option value="-1">Seleccione una opci&oacute;n</option>
                 <?php
                     include("conn.php");
-                    $sql = "select * from ponencias order by id ASC";
+                    $sql = "select * from agenda order by id ASC";
                     $query = $mysqli->query($sql);
                     while($row = $query->fetch_assoc()){
                 ?>

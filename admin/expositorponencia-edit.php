@@ -35,7 +35,7 @@
                 <select name="idPonencia" class="form-select form-control" id="idPonencia">
                 <?php
                     include("conn.php");
-                    $sql = "select * from ponencias order by id DESC";
+                    $sql = "select * from agenda order by id DESC";
                     $query = $mysqli->query($sql);
                     while($rowPonencia = $query->fetch_assoc()){
                 ?>

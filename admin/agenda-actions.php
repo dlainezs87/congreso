@@ -6,8 +6,6 @@ if($_POST['action']=="add"){
     $contenido = addslashes($_POST['contenido']);
     $lugar = addslashes($_POST['lugar']);
     $destacado = addslashes($_POST['destacado']);
-    $expositor = addslashes($_POST['expositor']);
-    $rol = addslashes($_POST['rol']);
 
     $fechaI = addslashes($_POST['fecha-hora-inicio']);
     $fechaIni = date_create_from_format('m/d/Y h:i A', $fechaI);
@@ -20,16 +18,12 @@ if($_POST['action']=="add"){
             contenido,
             fechaInicio,
             lugar,
-            expositor,
-            rol,
             destacado
         )values(
         '".$titulo."',
         '".$contenido."',
         '".$fechaInicio."',
         '".$lugar."',
-        '".$expositor."',
-        '".$rol."',
         '".$destacado."'
     )";
 
@@ -69,8 +63,6 @@ if($_POST['action']=="edit"){
     $contenido = addslashes($_POST['contenido']);
     $lugar = addslashes($_POST['lugar']);
     $destacado = addslashes($_POST['destacado']);
-    $expositor = addslashes($_POST['expositor']);
-    $rol = addslashes($_POST['rol']);
     $id = (int)addslashes($_POST['id']);
 
     $recibidaInicio = addslashes($_POST['fecha-hora-inicio']);
@@ -91,8 +83,6 @@ if($_POST['action']=="edit"){
                 contenido = '".$contenido."',
                 fechaInicio = '".$fechaInicio."',
                 lugar = '".$lugar."',
-                expositor = '".$expositor."',
-                rol = '".$rol."',
                 destacado = '".$destacado."'
                 where id = " . $id;
 

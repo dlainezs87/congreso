@@ -1,7 +1,7 @@
 <?php include("open.php");?>
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Expositor por Ponencia</h1>
+<h1 class="h3 mb-2 text-gray-800">Expositor por Evento</h1>
 
 <?php 
 if(isset($_GET['ok'])){ 
@@ -47,7 +47,7 @@ No se agregó el regitro, vuelva a intentarlo.
                     $sql = "SELECT ep.id, e.nombre, p.titulo 
                     FROM dbcongreso.expositorvsponencia ep
                     LEFT JOIN dbcongreso.expositores e ON (ep.idExpositor = e.id)
-                    LEFT JOIN dbcongreso.ponencias p ON (ep.idPonencia = p.id);";
+                    LEFT JOIN dbcongreso.agenda p ON (ep.idAgenda = p.id);";
                     $query = $mysqli->query($sql);
                     while($row = $query->fetch_assoc()){
                     ?>

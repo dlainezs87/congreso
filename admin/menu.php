@@ -28,12 +28,12 @@
             <li class="nav-item active">
                 <a class="nav-link" href="ponencias.php">
                 <i class="fa-solid fa-chalkboard-user"></i>
-                    <span>Ponencias</span></a>
+                    <span>Ejes Temáticos</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="expositorponencia.php">
                 <i class="fa-solid fa-chalkboard-user"></i>
-                    <span>Expositor por Ponencia</span></a>
+                    <span>Expositor por Evento</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="datosformulario.php">
