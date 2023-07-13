@@ -1,7 +1,25 @@
 <?php
 include("config/conexion.php");
 
-$sql = "select * from agenda order by id ASC";
+$sql = "SELECT 
+e.`nombre`,
+e.`pais`,
+e.`profesion`,
+e.`foto`,
+e.`foto`,
+e.`bandera`,
+e.`resumen`,
+a.`titulo`,
+a.`fechaInicio`,
+a.`contenido`,
+a.`lugar`,
+a.`destacado`,
+a.`expositor`,
+a.`rol`,
+a.`imagen`
+FROM dbcongreso.expositorvsponencia ep
+LEFT JOIN dbcongreso.expositores e ON (ep.idExpositor = e.id)
+LEFT JOIN dbcongreso.agenda a ON (ep.idAgenda = a.id)";
 $query = $mysqli->query($sql);
 
 ?>
@@ -38,13 +56,13 @@ $query = $mysqli->query($sql);
 						<div class="row">
 							<div class="col-lg-4 col-4">
 								<div class="expositor-programa-img">
-									<img style="width:100%;border-radius:50%;" src="<?=base_url?>assets/img/team/<?=$row['imagen']?>">
+									<img style="width:100%;border-radius:50%;" src="<?=base_url?>assets/img/team/<?=$row['foto']?>">
 								</div>
 							</div>
 							<div class="col-lg-8 col-8">
 								<div class="expositor-programa-datos">
-									<p><?=$row['expositor']?><br>
-									<span><?=$row['rol']?></apan></p>
+									<p><?=$row['nombre']?><br>
+									<span><?=$row['profesion']?></apan></p>
 								</div>
 							</div>
 						</div>

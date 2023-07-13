@@ -1,8 +1,8 @@
 <div style="width:100%;height:406px;background-size:cover;background-position:center;background-repeat:no-repeat; background:url('assets/img/inner-bg.jpg');">
       
       <div style="padding-top:200px;">
-        <h1 style="text-align:center;color:white;font-weight:bolder;">Ponencias</h1>
-         <p style="text-align:center;"><a style="color:white;" href="<?=base_url?>">Inicio</a> - <span style="text-align:center;color:#F8C300;">Ponencias</span></p>
+        <h1 style="text-align:center;color:white;font-weight:bolder;">Ejes Temáticos</h1>
+         <p style="text-align:center;"><a style="color:white;" href="<?=base_url?>">Inicio</a> - <span style="text-align:center;color:#F8C300;">Ejes Temáticos</span></p>
       </div>
 
 </div>

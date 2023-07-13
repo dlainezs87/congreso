@@ -42,15 +42,16 @@
 
       <!-- <h1 class="logo"><a href="index.html">logo</a></h1>-->
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="<?=base_url?>" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="<?=base_url?>">Inicio</a></li>
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=program-inner">Programa</a></li>
           <li><a class="nav-link scrollto" href="<?=base_url?>?pag=exhibitors-inner">Expositores</a></li>
-          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=ponencia-inner">Ponencias</a></li>
-          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=registar-brand-inner">Inscripción Patrocinador</a></li>
+          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=ponencia-inner">Ejes Temáticos</a></li>
+          <li><a class="nav-link scrollto" href="<?=base_url?>?pag=contact">Contacto</a></li>
+          <!--<li><a class="nav-link scrollto" href="<?=base_url?>?pag=registar-brand-inner">Inscripción Patrocinador</a></li>-->
           <!--<li><a class="nav-link scrollto" href="<?=base_url?>?pag=detail-inner">Contacto</a></li>-->
           <!--<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

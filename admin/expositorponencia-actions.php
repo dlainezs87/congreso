@@ -8,7 +8,7 @@ if($_POST['action']=="add"){
     //insert
     $sql = "insert into expositorvsponencia(
             idExpositor,
-            idPonencia
+            idAgenda
         )values(
         '".$idExpositor."',
         '".$idPonencia."'

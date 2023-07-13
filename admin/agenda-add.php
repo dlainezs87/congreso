@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-6 form-group">
                     <label for="lugar">Lugar:</label>
-                    <input type="text" required class="form-control" id="lugar" name="lugar" placeholder="">
+                    <input type="text" class="form-control" id="lugar" name="lugar" placeholder="">
                 </div>
                 <div class="col-6 form-group">
                     <label for="destacado">Destacado:</label>

@@ -56,6 +56,13 @@ if(!isset($_GET['pag'])){
                 require_once"views/inner-pages/registar-brand-inner.php";
               }
             break;
+            case 'contact':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/contact.php'; 
+              }else {
+                  require_once"views/inner-pages/contact.php";
+              }
+            break;
         default:
             break;
     }
