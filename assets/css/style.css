@@ -1304,7 +1304,7 @@ section {
 
 .team .member .member-info-content {
   position: absolute;
-  left: 50px;
+  left: 0px;
   right: 0;
   bottom: 0;
   transition: bottom 0.4s;
@@ -1957,4 +1957,95 @@ section {
     font-weight:bolder;
     margin-top:0px;
   }
+}
+
+
+.contact_section {
+  width:95%;
+  margin: 0 auto;
+  padding:40px;
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.contact_section .heading_container {
+  margin-bottom: 25px;
+}
+
+.contact_section .heading_container h2 {
+  text-transform: uppercase;
+}
+
+.contact_section .form_container input {
+  width: 100%;
+  border: none;
+  height: 50px;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  outline: 1px solid rgba(0, 0, 0, 0.1);
+  color:black;
+  font-style: italic;
+}
+
+.contact_section .form_container input::-webkit-input-placeholder {
+  color: #B4B4B4;
+}
+
+.contact_section .form_container input:-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.contact_section .form_container input::-ms-input-placeholder {
+  color: #B4B4B4;
+}
+
+.contact_section .form_container input::placeholder {
+  color: #B4B4B4;
+}
+
+.contact_section .form_container input.message-box {
+  height: 175px;
+}
+
+.contact_section .form_container button {
+  width: 100%;
+  border: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 12px 55px;
+  background-color: #104F9E;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.contact_section .form_container button:hover {
+  background-color: transparent;
+  color: #76BD41;
+  border: 1px solid #76BD41;
+}
+
+.contact_section .map_container {
+  height: 368px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  padding: 0;
+}
+
+.contact_section .map_container .map {
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.contact_section .map_container .map #googleMap {
+  height: 100%;
 }

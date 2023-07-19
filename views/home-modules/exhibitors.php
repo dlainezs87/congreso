@@ -1,7 +1,7 @@
 <?php
 include("config/conexion.php");
 
-$sql = "select * from expositores order by id DESC";
+$sql = "SELECT * FROM dbcongreso.expositores ep LEFT JOIN dbcongreso.agenda a ON (ep.id = a.id)";
 $query = $mysqli->query($sql);
 
 ?>
@@ -24,14 +24,14 @@ $query = $mysqli->query($sql);
               <div class="member-info">
                 <div class="member-info-content">
                   <a href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>"><h4><?=$row['nombre']?></h4></a>
-                  <p style="font-size:12px;color: white;"><span style="font-weight:bolder;">Ponencia:</span><?=$row['profesion']?></p>
+                  <p style="font-size:12px;color: white;"><span style="font-weight:bolder;">Evento:</span><?=$row['titulo']?></p>
                 </div>
-                <div class="social">
+                <!--<div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>

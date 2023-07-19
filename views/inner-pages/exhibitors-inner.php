@@ -40,12 +40,12 @@ $query = $mysqli->query($sql);
                   <a href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>"><h4><?=$row['nombre']?></h4></a>
                   <p style="font-size:12px;color: white;"><span style="font-weight:bolder;">Ponencia:</span><?=$row['profesion']?></p>
                 </div>
-                <div class="social">
+                <!--<div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
