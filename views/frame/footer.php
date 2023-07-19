@@ -27,21 +27,19 @@
             <h4>Mapa del sitio</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Inicio</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Programa</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Ponencia</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Patrocinadores</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Contacto</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url?>?pag=program-inner">Programa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url?>?pag=exhibitors-inner">Expositores</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url?>?pag=ponencia-inner">Ejes Temáticos</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url?>?pag=contact">Contacto</a></li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4 style="visibility:hidden;">Otros posibles links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Opcion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Opcion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Opcion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Opcion</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Opcion</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?=base_url?>?pag=register-inner">Inscripciones</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Patrocinadores</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Hospedaje</a></li>
             </ul>
           </div>
 
