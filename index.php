@@ -63,6 +63,13 @@ if(!isset($_GET['pag'])){
                   require_once"views/inner-pages/contact.php";
               }
             break;
+            case 'lodging':
+            if(isset($_GET['id'])){
+                require_once 'views/inner-pages/lodging.php'; 
+              }else {
+                  require_once"views/inner-pages/lodging.php";
+              }
+            break;
         default:
             break;
     }

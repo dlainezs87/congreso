@@ -2014,7 +2014,7 @@ section {
   text-transform: uppercase;
   display: inline-block;
   padding: 12px 55px;
-  background-color: #104F9E;
+  background-color: #325D7C;
   color: #ffffff;
   border-radius: 5px;
   -webkit-transition: all 0.3s;
@@ -2023,8 +2023,8 @@ section {
 
 .contact_section .form_container button:hover {
   background-color: transparent;
-  color: #76BD41;
-  border: 1px solid #76BD41;
+  color: #325D7C;
+  border: 1px solid #325D7C;
 }
 
 .contact_section .map_container {
