@@ -43,19 +43,22 @@ $query = $mysqli->query($sql);
 						&nbsp;&nbsp;
 					</div>
 					<div class="col-lg-3">
-						<div class="row">
-							<div class="col-lg-4 col-4">
-								<div class="expositor-programa-img">
-									<img style="width:100%;border-radius:50%;" src="<?=base_url?>assets/img/team/<?=$row['foto']?>">
+							<div style="display:table;height:200px;">
+								<div style="display:table-cell;vertical-align: middle;">
+									<div class="row">
+										<div class="col-lg-4 col-4">
+											<div class="expositor-programa-img">
+												<img style="width:100%;border-radius:50%;" src="<?=base_url?>assets/img/team/<?=$row['foto']?>">
+											</div>
+										</div>
+										<div class="col-lg-8 col-8">
+											<div class="expositor-programa-datos">
+												<p><?=$row['nombre']?><br><span><?=$row['profesion']?></span></p>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div class="col-lg-8 col-8">
-								<div class="expositor-programa-datos">
-									<p><?=$row['nombre']?><br>
-									<span><?=$row['profesion']?></apan></p>
-								</div>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -66,3 +69,4 @@ $query = $mysqli->query($sql);
 		</div>
 	</div>
 </section>
+

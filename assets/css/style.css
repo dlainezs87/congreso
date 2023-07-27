@@ -1887,12 +1887,12 @@ section {
 
 .expositor-programa-img{
   width: 100%;
-  padding-top:80px;
 }
 
 .expositor-programa-datos p{
-  color:#F8C300;font-weight:bolder;
-  padding-top:80px;
+  color:#F8C300;
+  font-weight:bolder;
+  padding-top:10px;
 }
 
 .expositor-programa-datos span{

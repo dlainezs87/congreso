@@ -43,9 +43,22 @@
             </ul>
           </div>
 
-          <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Eje Temático</h4>
-            <p>Geomatics Ordenamiento Territorial Ejercicio Profesional</p>
+          <?php
+          include("config/conexion.php");
+          $sql = "select * from ponencias order by id ASC";
+          $query = $mysqli->query($sql);
+          ?>
+          <div class="col-lg-4 col-md-6 footer-newsletter footer-links">
+            <h4>Ejes Temáticos</h4>
+            <ul>
+              <?php 
+                while($row = $query->fetch_assoc()){
+              ?>
+              <li><i class="bx bx-chevron-right"></i> <?=$row['titulo']?></li>
+              <?php 
+                }
+              ?>
+            </ul>
           </div> 
 
         </div>

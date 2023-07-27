@@ -30,7 +30,6 @@ $row = $query->fetch_assoc()
 					<h2 style="padding-top:30px;" class="mb-3 mt-3">Resumen del expositor</h2>
 					<h1 style="font-weight:bolder;color:#2C5976;"><?=$row['nombre']?></h1>
 					<h4 style="padding-top:10px;"><?=$row['profesion']?></h4>
-					<h4 style="padding-top:10px;"><?=$row['fechaInicio']?></h4>
 					<h4 style="padding-top:10px;"><img style="width:30px;height:30px;border-radius:50%;" src="<?=base_url?>assets/img/team/<?=$row['bandera']?>">&nbsp; <?=$row['pais']?></h4>
 				</div>
 			</div>
@@ -41,6 +40,8 @@ $row = $query->fetch_assoc()
 				<p><?=$row['resumen']?></p><br>
 
 				<h4 style="font-weight:bolder;"><?=$row['titulo']?></h4>
+
+				<h4 style="padding-top:10px;"><?=$row['fechaInicio']?></h4>
 
 				<p><?=$row['contenido']?></p>
 			</div>
