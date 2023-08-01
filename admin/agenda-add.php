@@ -20,6 +20,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-6 form-group">
+                    <label for="fecha-hora">Hora Final:</label>
+                    <input type="time" id="horaFinal" name="horaFinal">
+                </div>
             </div>
             <div class="row">
                 <div class="col-6 form-group">

@@ -125,20 +125,81 @@
               <p style="text-align:center;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p><br>
               <div class="row mt-3">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="nombre" class="form-control" id="nombre" placeholder="Nombre:" required>
+                  <input type="text" name="nombre" class="form-control" id="nombre" placeholder="*Nombre:" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Apellido:" required>
+                  <input type="text" class="form-control" name="apellido" id="apellido" placeholder="*Apellido:" required>
                 </div>
               </div>
 
               <div class="row mt-3">
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Email:" required>
+                  <input type="email" class="form-control" name="email" id="email" placeholder="*Email:" required>
                 </div>
 
                 <div class="col-md-6 form-group">
-                  <input type="text" name="telefono" class="form-control" id="telefono" placeholder="Teléfono:" required>
+                  <input type="text" name="telefono" class="form-control" id="telefono" placeholder="*Teléfono:" required>
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="carnet" class="form-control" id="carnet" placeholder="Carné:">
+                </div>
+
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <div class="form-check form-check-inline mt-1">
+                      <input  style="padding: 10px 10px; border-radius:50%;" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="estudiante" onclick="mostrar(this.form,0)">
+
+                      <label class="form-check-label" for="inlineRadio1">&nbsp; Estudiante</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input  style="padding: 10px 10px; border-radius:50%;" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="agremiado" onclick="mostrar(this.form,0)">
+
+                      <label class="form-check-label" for="inlineRadio2">&nbsp; Persona agremiada</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                      <input  style="padding: 10px 10px; border-radius:50%;" class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="ninguna" onclick="mostrar(this.form,1)">
+
+                      <label class="form-check-label" for="inlineRadio2">&nbsp;Ninguna</label>
+                    </div>
+
+                    <input style="display:none;"  type="text" name="cedula" class="form-control mt-3 cedula" id="cedula" placeholder="*Debe digitar su cédula en caso seleccionar una opción">
+                </div>
+              </div>
+
+              <div class="row mt-3">
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <select class="form-control" name="formapago">
+                      <option selected>*Tipo de pago:</option>
+                      <option value="Sinpe">Sinpe</option>
+                      <option value="Transferencia">Transferencia</option>
+                    </select>
+                </div>
+                <div class="col-md-6 form-group">
+                  <input type="text" name="empresa" class="form-control" id="empresa" placeholder="Empresa:">
+                </div>
+              </div>
+
+               <div class="row mt-3">
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="text" class="form-control" name="pais" id="pais" placeholder="País:">
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <select class="form-control" name="fecha">
+                      <option selected>*Elíga la fecha del evento al que desea asistir:</option>
+                      <?php
+                      include("config/conexion.php");
+                      $sql = "SELECT * FROM agenda";
+                      $query = $mysqli->query($sql);
+                      while($row = $query->fetch_assoc()){
+                      ?>
+                        <option value="<?=$row['fechaInicio']?>"><?=$row['fechaInicio']?></option>
+                      <?php
+                      }
+                      ?>
+                    </select>
                 </div>
               </div>
 
@@ -146,7 +207,7 @@
                 <div class="col-md-6 form-group mt-3 mt-md-0">
                   <div>
                     <select class="form-control" name="participacion">
-                      <option selected>Tipo de inscripción:</option>
+                      <option selected>*Tipo de inscripción:</option>
                       <option value="Miembros CIT y estudiantes activos">Miembros CIT y estudiantes activos</option>
                       <option value="Profesionales de otras áreas (2 días)">Profesionales de otras áreas (2 días)</option>
                       <option value="Miembros CIT asistencia 1 solo día">Miembros CIT asistencia 1 solo día</option>
@@ -154,34 +215,28 @@
                     </select>
                   </div>
                 </div>
-                <div class="col-md-6 form-group">
-                  <input type="text" name="carnet" class="form-control" id="carnet" placeholder="Carné:" required>
+
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <select class="form-control" name="usuario">
+                      <option selected>*Tipo de usuario:</option>
+                      <option value="miembro cit">Miembro CIT</option>
+                      <option value="miembro cfia">Miembro CFIA</option>
+                      <option value="estudiante">Estudiante</option>
+                      <option value="general">Público General</option>
+                    </select>
                 </div>
               </div>
 
               <div class="row mt-3">
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <select class="form-control" name="formapago">
-                      <option selected>Tipo de pago:</option>
-                      <option value="Sinpe">Sinpe</option>
-                      <option value="Transferencia">Transferencia</option>
-                    </select>
-                </div>
-                <div class="col-md-6 form-group">
-                  <input type="text" name="empresa" class="form-control" id="empresa" placeholder="Empresa:" required>
-                </div>
-              </div>
-
-               <div class="row mt-3">
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="text" class="form-control" name="pais" id="pais" placeholder="País:" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <select class="form-control" name="fecha">
-                      <option selected>Fecha:</option>
-                      <option value="24/7/23">24/7/23</option>
-                      <option value="28/7/23">28/7/23</option>
-                      <option value="Todas">Todas</option>
+                    <select class="form-control" name="alimento">
+                      <option selected>*Restricción alimenticia:</option>
+                      <option value="vegetariano">Vegetariano</option>
+                      <option value="vegano">Vegano</option>
+                      <option value="gluten">Intolerante a la Lactosa</option>
+                      <option value="lactosa">Intolerante al Gluten</option>
+                      <option value="celiaco">Celíaco</option>
+                      <option value="ninguna">N/A</option>
                     </select>
                 </div>
               </div>
@@ -202,6 +257,14 @@
       </div>
     </section>
 
-   
+   <script>
+  function mostrar(frm,num) {
+    if(num==0) {
+      frm.cedula.style.display='block';
+    }else{
+      frm.cedula.style.display='none';
+    }
+  }
+  </script>
 
 </main><!-- End #main -->

@@ -10,6 +10,9 @@ if($_POST['action']=="add"){
     $fechaI = addslashes($_POST['fecha-hora-inicio']);
     $fechaIni = date_create_from_format('m/d/Y h:i A', $fechaI);
     $fechaInicio = date_format($fechaIni, 'Y-m-d H:i:s');
+
+    $horaFinal = addslashes($_POST['horaFinal']);
+    
     
 
     //insert
@@ -17,12 +20,14 @@ if($_POST['action']=="add"){
             titulo,
             contenido,
             fechaInicio,
+            fechaFinal,
             lugar,
             destacado
         )values(
         '".$titulo."',
         '".$contenido."',
         '".$fechaInicio."',
+        '".$horaFinal."',
         '".$lugar."',
         '".$destacado."'
     )";
@@ -65,23 +70,15 @@ if($_POST['action']=="edit"){
     $destacado = addslashes($_POST['destacado']);
     $id = (int)addslashes($_POST['id']);
 
-    $recibidaInicio = addslashes($_POST['fecha-hora-inicio']);
-
-    $formato_esperado = 'Y-m-d H:i:s';
-    $fecha1 = DateTime::createFromFormat($formato_esperado, $recibidaInicio);
-
-    if ($fecha1 && $fecha1->format($formato_esperado) === $recibidaInicio) {
-        $fechaInicio = $recibidaInicio;
-    } else {
-        $fechaIni = date_create_from_format('m/d/Y h:i A', $fechaI);
-        $fechaInicio = date_format($fechaIni, 'Y-m-d H:i:s');
-    }
-
+    $fechaInicio = addslashes($_POST['fecha-hora-inicio']);
+    $horaFinal = addslashes($_POST['horaFinal']);
+    
     //insert
     $sql = "update agenda set
                 titulo = '".$titulo."',
                 contenido = '".$contenido."',
                 fechaInicio = '".$fechaInicio."',
+                fechaFinal = '".$horaFinal."',
                 lugar = '".$lugar."',
                 destacado = '".$destacado."'
                 where id = " . $id;

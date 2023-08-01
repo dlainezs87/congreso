@@ -1,9 +1,31 @@
 <?php
 $id = $_GET['id'];
 include("config/conexion.php");
-$sql = "SELECT ep.id, e.nombre, e.foto, e.profesion, e.pais, e.bandera, e.resumen, p.fechaInicio, p.titulo, p.contenido FROM dbcongreso.expositorvsponencia ep LEFT JOIN dbcongreso.expositores e ON (ep.idExpositor = e.id) LEFT JOIN dbcongreso.agenda p ON (ep.idAgenda = p.id) where ep.idExpositor=".$id;
+$sql = "SELECT ep.id, e.nombre, e.foto, e.profesion, e.pais, e.bandera, e.resumen, p.fechaInicio, p.titulo, p.contenido FROM tcongreso.expositorvsponencia ep LEFT JOIN tcongreso.expositores e ON (ep.idExpositor = e.id) LEFT JOIN tcongreso.agenda p ON (ep.idAgenda = p.id) where ep.idExpositor=".$id;
 $query = $mysqli->query($sql);
-$row = $query->fetch_assoc()
+$row = $query->fetch_assoc();
+
+function fechaEspanol($fecha) {
+		$fecha = substr($fecha, 0, 10);
+		$numeroDia = date('d', strtotime($fecha));
+		$dia = date('l', strtotime($fecha));
+		$mes = date('F', strtotime($fecha));
+		$anio = date('Y', strtotime($fecha));
+		$dias_ES = array("Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo");
+		$dias_EN = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+		$nombredia = str_replace($dias_EN, $dias_ES, $dia);
+		$meses_ES = array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+		$meses_EN = array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+		$nombreMes = str_replace($meses_EN, $meses_ES, $mes);
+		return $nombredia." ".$numeroDia." de ".$nombreMes." de ".$anio;
+} 
+
+$time = $row['fechaInicio'];
+$time2 = $row['fechaFinal'];
+$dateTime = new \DateTime($time);
+$dateTime2 = new \DateTime($time2);
+$hour = $dateTime->format('H:i A');
+$hour2 = $dateTime2->format('H:i A');
 
 ?>
 
@@ -41,7 +63,7 @@ $row = $query->fetch_assoc()
 
 				<h4 style="font-weight:bolder;"><?=$row['titulo']?></h4>
 
-				<h4 style="padding-top:10px;"><?=$row['fechaInicio']?></h4>
+				<p style="padding-top:10px;font-weight:bolder;"><?php echo fechaEspanol($time);?> / <?=$hour?> - <?=$hour2?></p>
 
 				<p><?=$row['contenido']?></p>
 			</div>

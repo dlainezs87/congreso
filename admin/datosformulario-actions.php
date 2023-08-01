@@ -14,6 +14,10 @@ if($_POST['action']=="add"){
     $Fecha = (isset($_POST['fecha'])) ? filter_var($_POST['fecha'], FILTER_SANITIZE_STRING): '';
     $Mensaje = (isset($_POST['mensaje'])) ? filter_var($_POST['mensaje'], FILTER_SANITIZE_STRING): '';
 
+    $cedula = (isset($_POST['cedula'])) ? filter_var($_POST['cedula'], FILTER_SANITIZE_STRING): '';
+    $usuario = (isset($_POST['usuario'])) ? filter_var($_POST['usuario'], FILTER_SANITIZE_STRING): '';
+    $alimento = (isset($_POST['alimento'])) ? filter_var($_POST['alimento'], FILTER_SANITIZE_STRING): '';
+
     //insert
     $sql = "insert into datosformulario(
             `Nombre`,
@@ -26,6 +30,9 @@ if($_POST['action']=="add"){
             `Empresa`,
             `Pais`,
             `fecha`,
+            `cedula`,
+            `alimento`,
+            `usuario`,
             `Mensaje`
         )values(
         '".$Nombre."',
@@ -38,6 +45,9 @@ if($_POST['action']=="add"){
         '".$Empresa."',
         '".$Pais."',
         '".$Fecha."',
+        '".$cedula."',
+        '".$alimento."',
+        '".$usuario."',
         '".$Mensaje."'
     )";
 

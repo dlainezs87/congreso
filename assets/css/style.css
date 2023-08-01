@@ -2049,3 +2049,20 @@ section {
 .contact_section .map_container .map #googleMap {
   height: 100%;
 }
+
+/* RADIO REGISTRO OCULTAR CEDULA */
+
+input.cedula {
+  display: none;
+}
+
+/* lo muestros si está seleccionado value=texto */
+input.i-radio[value="cedula"]:checked ~ input.cedula {
+  display: block;
+}
+
+.form-group input:required~label::before {
+    content: "* ";
+    color: red;
+    font-weight: bold;
+  }

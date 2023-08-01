@@ -10,15 +10,14 @@
               <br><p class="pb-3"><em>Organizado por el Colegio de Ingenieros Topógrafos de Costa Rica</em></p>
               <p>
                 Rancho Don Teo, Perez Zeledon<br><br>
-                <strong>Reservaciones:</strong> (506) 2222-2222<br>
-                <strong>Whatsapp:</strong> (506)8888-8888<br>
+                <strong>Reservaciones:</strong> (506) 2103-2442 <br>
+                <strong>Email:</strong> info@colegiotopografocr.com<br>
               </p>
               <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="https://www.facebook.com/ColegioIngenierosTopografos" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="https://www.instagram.com/colegioingenierostopografos/ " class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="https://twitter.com/search?q=CIT2012CR " class="google-plus"><i class="bx bxl-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/colegio-ingenieros-top%C3%B3grafos-cit-151081235/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
               </div>
             </div>
           </div>
@@ -48,7 +47,7 @@
           $sql = "select * from ponencias order by id ASC";
           $query = $mysqli->query($sql);
           ?>
-          <div class="col-lg-4 col-md-6 footer-newsletter footer-links">
+          <!--<div class="col-lg-4 col-md-6 footer-newsletter footer-links">
             <h4>Ejes Temáticos</h4>
             <ul>
               <?php 
@@ -59,7 +58,7 @@
                 }
               ?>
             </ul>
-          </div> 
+          </div> -->
 
         </div>
       </div>

@@ -1,7 +1,7 @@
 <?php
 include("config/conexion.php");
 
-$sql = "SELECT * FROM dbcongreso.expositores ep LEFT JOIN dbcongreso.agenda a ON (ep.id = a.id)";
+$sql = "SELECT * FROM tcongreso.expositores ep LEFT JOIN tcongreso.agenda a ON (ep.id = a.id)";
 $query = $mysqli->query($sql);
 
 ?>
@@ -9,38 +9,29 @@ $query = $mysqli->query($sql);
     <section id="team" class="team section-bg">
       <div class="container">
 
-        <div class="section-title">
-          <h2>Expositores</h2>
-          <p>¡Descubre la experiencia y conocimiento de nuestros <span style="color:#F8C300;">destacados expositores!</span></p>
-        </div>
+          <div class="section-title">
+            <h2>Expositores</h2>
+            <p>¡Descubre la experiencia y conocimiento de nuestros <span style="color:#F8C300;">destacados expositores!</span></p>
+          </div>
 
-        <div class="row">
+          <div class="row">
           <?php 
             while($row = $query->fetch_assoc()){
           ?>
-          <div class="col-xl-3 col-lg-4 col-md-6">
-            <div class="member" >
-              <img src="<?=base_url?>assets/img/team/<?=$row['foto']?>" class="img-fluid" alt="">
-              <div class="member-info">
-                <div class="member-info-content">
-                  <a href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>"><h4><?=$row['nombre']?></h4></a>
-                  <p style="font-size:12px;color: white;"><span style="font-weight:bolder;">Evento:</span><?=$row['titulo']?></p>
+              <div class="col-xl-3 col-lg-4 col-md-6">
+                <div style="background:white;max-height:439px;padding:20px;box-shadow: 0px 0px 26px 7px rgba(0,0,0,0.19);-webkit-box-shadow: 0px 0px 26px 7px rgba(0,0,0,0.05);-moz-box-shadow: 0px 0px 26px 7px rgba(0,0,0,0.19);">
+                  <a href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>"><img src="<?=base_url?>assets/img/team/<?=$row['foto']?>" class="img-fluid" alt=""></a>
+                  <a href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>">
+                    <h6 style="text-align:center;color:#325D7C;font-weight:bolder;padding-top:10px;"><?=$row['nombre']?></h6>
+                    <p style="text-align:center;color:black;font-size:12px;font-weight:bolder;">Evento:</p>
+                    <p style="font-size:12px;color:black;text-align:center;"><?=$row['titulo']?></p>
+                    <p style="text-align:center;font-size:12px;"><a style="color:black;font-weight:bolder;" href="<?=base_url?>?pag=detail-inner&&id=<?=$row['id']?>"><i class="bi bi-search"></i> Ver detalle</a></p>
+                  </a>
                 </div>
-                <!--<div class="social">
-                  <a href=""><i class="bi bi-twitter"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>-->
               </div>
-            </div>
-          </div>
           <?php 
             }
           ?>
-          
-
+          </div>
         </div>
-
-      </div>
     </section><!-- End Team Section -->
